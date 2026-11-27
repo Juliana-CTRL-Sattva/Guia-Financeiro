@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guia Financeiro · Sattva Controladoria</title>
-<meta name="description" content="Guia Financeiro da Sattva Controladoria: conceitos, boas práticas e plano de contas explicados de forma simples, com exemplos práticos.">
+<meta name="description" content="Guia Financeiro da Sattva Controladoria: conceitos, boas práticas e plano de contas explicados de forma simples, com exemplos práticos, como usar OMIE, Conta Azul e Bling e como emitir notas fiscais.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
 <style>
@@ -307,6 +307,36 @@ strong{ color:var(--azul-sattva); }
 @media (max-width:560px){ .rec-cards{ grid-template-columns:1fr; } }
 .rec-card{ background:#fff; border:1px solid var(--cinza-claro); border-radius:8px; padding:14px; font-size:0.83rem; font-weight:600; color:var(--azul-sattva); display:flex; align-items:center; gap:10px; }
 .rec-card .dotc{ width:8px; height:8px; border-radius:50%; background:var(--verde-ok); flex:none; }
+
+/* ---------- notas fiscais ---------- */
+.tbl-sub{ font-size:0.72rem; color:var(--cinza-medio); font-weight:600; }
+.pillar-card.span2{ grid-column:span 2; border-top:3px solid var(--amarelo); }
+@media (max-width:560px){ .pillar-card.span2{ grid-column:auto; } }
+/* ---------- usando seu sistema: abas e passo a passo ---------- */
+.glos h4{ font-size:0.95rem; margin-bottom:6px; }
+.glos p{ font-size:0.84rem; margin:0; }
+.sys-tabs{ display:flex; gap:8px; flex-wrap:wrap; background:#fff; border:1px solid var(--cinza-claro); border-radius:8px; padding:8px; margin-top:12px; box-shadow:var(--shadow); }
+.sys-tab{ flex:1; min-width:110px; font-family:var(--font); font-weight:800; font-size:0.92rem; padding:11px 16px; border-radius:6px; border:1.5px solid transparent; background:var(--fundo); color:var(--grafite); cursor:pointer; }
+.sys-tab:hover{ border-color:var(--azul-sattva); color:var(--azul-sattva); }
+.sys-tab.active{ background:var(--azul-sattva); color:#fff; border-color:var(--azul-sattva); }
+.sys-panel{ display:none; margin-top:18px; }
+.sys-panel.active{ display:block; }
+.sys-intro{ font-size:0.92rem; }
+.proc-card{ background:#fff; border:1px solid var(--cinza-claro); border-radius:8px; padding:20px; box-shadow:var(--shadow); margin-bottom:16px; }
+.proc-head{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.proc-head h4{ margin:0; font-size:1.02rem; }
+.sys-sub{ font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:var(--azul-claro); margin:18px 0 0; }
+.menu-path{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; background:var(--azul-escuro); color:#fff; border-radius:6px; padding:9px 12px; font-size:0.8rem; font-weight:700; margin:8px 0 12px; }
+.menu-path span{ background:rgba(255,255,255,0.12); padding:3px 8px; border-radius:4px; }
+.menu-path .sep{ background:none; padding:0; color:var(--amarelo); }
+.menu-path .lbl{ background:none; padding:0; margin-right:4px; font-size:0.66rem; text-transform:uppercase; letter-spacing:.06em; color:var(--amarelo-claro); }
+.num-steps{ list-style:none; counter-reset:passo; padding:0; margin:0; }
+.num-steps li{ counter-increment:passo; position:relative; padding:2px 0 10px 34px; color:var(--grafite); font-size:0.88rem; }
+.num-steps li::before{ content:counter(passo); position:absolute; left:0; top:0; width:24px; height:24px; border-radius:50%; background:var(--amarelo); color:var(--azul-escuro); font-weight:800; font-size:0.75rem; display:flex; align-items:center; justify-content:center; }
+.sys-list{ padding-left:18px; margin:8px 0 0; color:var(--grafite); font-size:0.88rem; }
+.sys-list li{ margin-bottom:6px; }
+.sys-note{ font-size:0.78rem; color:var(--cinza-medio); margin-top:18px; }
+.pillar-card.wide{ grid-column:1/-1; border-top:3px solid var(--amarelo); }
 </style>
 </head>
 <body>
@@ -342,8 +372,10 @@ strong{ color:var(--azul-sattva); }
       <a href="#escolher-conta" class="nav-link"><span class="n">3</span> Escolher a Conta Certa</a>
       <a href="#nova-conta" class="nav-link"><span class="n">4</span> Criar Nova Conta</a>
       <a href="#conciliacao" class="nav-link"><span class="n">5</span> Conciliação Bancária</a>
-      <a href="#plano-contas" class="nav-link"><span class="n">6</span> Plano de Contas</a>
-      <a href="#faq" class="nav-link"><span class="n">7</span> Perguntas Frequentes</a>
+      <a href="#sistemas" class="nav-link"><span class="n">6</span> Usando seu Sistema</a>
+      <a href="#notas-fiscais" class="nav-link"><span class="n">7</span> Notas Fiscais</a>
+      <a href="#plano-contas" class="nav-link"><span class="n">8</span> Plano de Contas</a>
+      <a href="#faq" class="nav-link"><span class="n">9</span> Perguntas Frequentes</a>
     </nav>
   </aside>
 
@@ -369,6 +401,8 @@ strong{ color:var(--azul-sattva); }
           <li style="margin-bottom:8px;">Como realizar lançamentos corretamente</li>
           <li style="margin-bottom:8px;">Como utilizar o plano de contas</li>
           <li style="margin-bottom:8px;">Como fazer a conciliação bancária</li>
+          <li style="margin-bottom:8px;">Como usar OMIE, Conta Azul e Bling</li>
+          <li style="margin-bottom:8px;">Como emitir notas fiscais</li>
           <li style="margin-bottom:8px;">Boas práticas para a rotina financeira</li>
           <li style="margin-bottom:8px;">Perguntas frequentes</li>
           <li>Exemplos práticos</li>
@@ -407,8 +441,20 @@ strong{ color:var(--azul-sattva); }
           <p>Como bater o que está no seu controle com o que realmente aconteceu no banco.</p>
           <span class="go">Aprender a conciliar →</span>
         </a>
+        <a class="pillar-card" href="#sistemas">
+          <span class="pillar-tag">06 · No sistema</span>
+          <h3>Usando seu Sistema</h3>
+          <p>Onde clicar no OMIE, Conta Azul e Bling para lançar contas a pagar, a receber e conciliar.</p>
+          <span class="go">Ver o passo a passo →</span>
+        </a>
+        <a class="pillar-card span2" href="#notas-fiscais">
+          <span class="pillar-tag">07 · Prática</span>
+          <h3>Notas Fiscais</h3>
+          <p>Qual nota usar, o que significa cada campo, como emitir no seu sistema e o que muda com a Reforma Tributária em 2026 e 2027.</p>
+          <span class="go">Aprender a emitir →</span>
+        </a>
         <a class="pillar-card" href="#plano-contas">
-          <span class="pillar-tag">06 · Consulta</span>
+          <span class="pillar-tag">08 · Consulta</span>
           <h3>Plano de Contas</h3>
           <p>Catálogo comentado por segmento, com Excel pronto para baixar.</p>
           <span class="go">Consultar o plano de contas →</span>
@@ -770,6 +816,7 @@ strong{ color:var(--azul-sattva); }
           <li>Confira o saldo final.</li>
         </ol>
         <div class="dica" style="margin-top:14px;"><p class="mt-0" style="text-align:center; font-weight:800; font-size:0.95rem;">Saldo Banco = Saldo ERP</p></div>
+        <p style="margin-top:14px; font-size:0.85rem;">Quer ver onde clicar? Veja o passo a passo no OMIE, Conta Azul e Bling em <a href="#sistemas">Usando seu Sistema</a>.</p>
       </div>
 
       <h3 style="margin-top:26px; font-size:1.05rem;">Quando considerar uma movimentação conciliada?</h3>
@@ -868,9 +915,461 @@ strong{ color:var(--azul-sattva); }
       </div>
     </section>
 
-    <!-- 6. PLANO DE CONTAS -->
+    <!-- 6. USANDO SEU SISTEMA (OMIE, CONTA AZUL, BLING) -->
+    <section class="section" id="sistemas">
+      <p class="section-eyebrow"><span class="dot"></span>06 · No sistema</p>
+      <h2 class="sec-icon-h3"><span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span> Usando seu Sistema</h2>
+      <p>Escolha o sistema que a sua empresa usa — <strong>OMIE</strong>, <strong>Conta Azul</strong> ou <strong>Bling</strong> — e veja exatamente onde clicar para lançar contas a pagar, contas a receber e fazer a conciliação bancária.</p>
+
+      <h3 style="margin-top:8px; font-size:1.05rem;">Antes de começar: as palavras que aparecem em todo sistema</h3>
+      <div class="grid-3">
+        <div class="card glos"><h4>Título</h4><p>É cada conta registrada no sistema: um boleto a pagar, uma venda a receber, uma parcela.</p></div>
+        <div class="card glos"><h4>Dar baixa</h4><p>É avisar o sistema que aquela conta <strong>foi paga ou recebida de verdade</strong>. Sem baixa, ela continua aparecendo como "em aberto".</p></div>
+        <div class="card glos"><h4>Categoria</h4><p>É a conta do <a href="#plano-contas">Plano de Contas</a> (Aluguel, Energia Elétrica, Receita de Serviços...). É ela que alimenta a DRE.</p></div>
+        <div class="card glos"><h4>Conta corrente / Caixas e Bancos</h4><p>É a conta bancária da empresa cadastrada no sistema: de onde o dinheiro sai ou para onde ele entra.</p></div>
+        <div class="card glos"><h4>Extrato OFX</h4><p>É o extrato do banco em um formato que o sistema consegue ler. Você baixa no internet banking e importa no sistema.</p></div>
+        <div class="card glos"><h4>Integração bancária</h4><p>Quando o banco está conectado ao sistema (ex.: Open Finance), o extrato chega sozinho, sem precisar baixar o OFX.</p></div>
+      </div>
+
+      <h3 style="margin-top:26px; font-size:1.05rem;">O caminho de toda movimentação</h3>
+      <p>Não importa o sistema: toda conta passa pelas mesmas quatro etapas.</p>
+      <div class="steps">
+        <div class="step-card"><div class="step-num">1</div><h4>Registrar</h4><p>Lançar a conta a pagar ou a receber assim que ela surgir (chegou o boleto, fechou a venda).</p></div>
+        <div class="step-card"><div class="step-num">2</div><h4>Pagar ou receber</h4><p>O dinheiro sai ou entra no banco, por Pix, boleto, cartão ou transferência.</p></div>
+        <div class="step-card"><div class="step-num">3</div><h4>Dar baixa</h4><p>Informar no sistema a data e a conta bancária em que o pagamento ou recebimento aconteceu.</p></div>
+        <div class="step-card"><div class="step-num">4</div><h4>Conciliar</h4><p>Conferir com o extrato do banco se tudo o que está no sistema realmente aconteceu.</p></div>
+      </div>
+      <div class="dica" style="margin-top:16px;"><span class="rotulo">Atalho</span><p>Se o banco está integrado ao sistema, as etapas 3 e 4 costumam acontecer juntas: ao conciliar o extrato, o próprio sistema já dá a baixa na conta.</p></div>
+
+      <h3 style="margin-top:26px; font-size:1.05rem;">Escolha o seu sistema</h3>
+      <div class="sys-tabs" role="tablist" aria-label="Escolha o sistema">
+        <button class="sys-tab" role="tab" data-sys="omie" aria-controls="sys-omie">OMIE</button>
+        <button class="sys-tab" role="tab" data-sys="contaazul" aria-controls="sys-contaazul">Conta Azul</button>
+        <button class="sys-tab" role="tab" data-sys="bling" aria-controls="sys-bling">Bling</button>
+      </div>
+
+      <!-- ===================== OMIE ===================== -->
+      <div class="sys-panel" id="sys-omie" role="tabpanel">
+        <p class="sys-intro">No OMIE, tudo de financeiro fica no módulo <strong>Finanças</strong>. Passe o mouse sobre ele para abrir o menu lateral.</p>
+
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp vermelho">Saída</span><h4>Contas a Pagar</h4></div>
+          <p class="sys-sub">Para registrar uma conta</p>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Finanças</span><span class="sep">›</span><span>Contas a Pagar</span><span class="sep">›</span><span>Incluir</span></div>
+          <ol class="num-steps">
+            <li>Escolha como incluir: digitando, lendo o <strong>código de barras do boleto</strong> ou a partir da <strong>NF-e de compra</strong>. Nas duas últimas, o OMIE preenche valor e vencimento sozinho.</li>
+            <li>Preencha ou confira: <strong>Fornecedor</strong>, <strong>Categoria</strong> (conta do plano de contas), <strong>Vencimento</strong>, <strong>Valor</strong> e a <strong>Conta Corrente</strong> de onde o dinheiro vai sair.</li>
+            <li>Escreva a descrição no padrão do guia: <em>forma de pagamento — fornecedor — referência</em>.</li>
+            <li>Salve. A conta fica "a pagar" até você dar baixa.</li>
+          </ol>
+          <p class="sys-sub">Para dar baixa (depois de pagar)</p>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Finanças</span><span class="sep">›</span><span>Contas a Pagar</span><span class="sep">›</span><span>Exibir todas</span><span class="sep">›</span><span>Pagar Agora</span></div>
+          <ol class="num-steps">
+            <li>Na lista, selecione a conta (ou várias de uma vez) e clique em <strong>"Pagar Agora"</strong>, no menu da direita.</li>
+            <li>Informe a <strong>data real</strong> do pagamento e confirme a conta corrente.</li>
+          </ol>
+          <div class="dica"><span class="rotulo">Dica</span><p>Muitas contas para lançar de uma vez? Use <strong>Finanças › Contas a Pagar › Importar Planilha</strong>.</p></div>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp verde">Entrada</span><h4>Contas a Receber</h4></div>
+          <p class="sys-sub">Para registrar uma conta</p>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Finanças</span><span class="sep">›</span><span>Contas a Receber</span><span class="sep">›</span><span>Incluir</span></div>
+          <ol class="num-steps">
+            <li>Antes de incluir, confira a lista: <strong>vendas faturadas no OMIE já geram a conta a receber sozinhas</strong>. Incluir de novo causa duplicidade.</li>
+            <li>Para um recebimento avulso, preencha: <strong>Cliente</strong>, <strong>Categoria</strong> de receita, <strong>Vencimento</strong>, <strong>Valor</strong> e <strong>Conta Corrente</strong> onde o dinheiro vai cair.</li>
+            <li>Descreva com cliente e referência (pedido, NF, contrato) e salve.</li>
+          </ol>
+          <p class="sys-sub">Para dar baixa (depois de receber)</p>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Finanças</span><span class="sep">›</span><span>Contas a Receber</span><span class="sep">›</span><span>Exibir todas</span></div>
+          <ol class="num-steps">
+            <li>Selecione o título e use a opção de recebimento no menu da direita.</li>
+            <li>Informe a data em que o dinheiro <strong>caiu na conta</strong> — não a data da venda.</li>
+          </ol>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp azul">Conferência</span><h4>Conciliação Bancária</h4></div>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Finanças</span><span class="sep">›</span><span>Movimentação de Contas Correntes</span><span class="sep">›</span><span>Importar Extrato</span></div>
+          <ol class="num-steps">
+            <li>Baixe o extrato em <strong>OFX</strong> no internet banking. Se o banco já está integrado ao OMIE, o extrato chega sozinho e você pula esta etapa.</li>
+            <li>Clique em <strong>Importar Extrato</strong>, escolha a conta corrente e o arquivo.</li>
+            <li>O OMIE coloca lado a lado o extrato e os lançamentos. Quando bater (mesmo valor e data), <strong>confirme</strong>.</li>
+            <li>Apareceu no extrato algo que não está no OMIE (tarifa, rendimento, IOF)? Crie a conta ali mesmo, com a categoria certa: o OMIE já registra, dá baixa e concilia.</li>
+            <li>No final, confira se o saldo do OMIE ficou <strong>igual</strong> ao saldo do banco.</li>
+          </ol>
+          <div class="dica"><span class="rotulo">Sem arquivo OFX?</span><p>Dá para conciliar marcando item por item: no módulo Finanças, abra o <strong>Passo 5 — Conciliar Contas Correntes</strong>.</p></div>
+        </div>
+      </div>
+
+      <!-- ===================== CONTA AZUL ===================== -->
+      <div class="sys-panel" id="sys-contaazul" role="tabpanel">
+        <p class="sys-intro">Na Conta Azul, contas a pagar, contas a receber e contas bancárias ficam todas no menu <strong>Financeiro</strong>.</p>
+
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp vermelho">Saída</span><h4>Contas a Pagar</h4></div>
+          <p class="sys-sub">Para registrar uma conta</p>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Financeiro</span><span class="sep">›</span><span>Contas a pagar</span><span class="sep">›</span><span>botão de nova conta (topo da tela)</span></div>
+          <ol class="num-steps">
+            <li>Preencha: <strong>Fornecedor</strong>, <strong>Categoria</strong> (conta do plano de contas), <strong>Vencimento</strong>, <strong>Valor</strong> e a <strong>conta bancária</strong> de onde o dinheiro vai sair.</li>
+            <li>Escreva a descrição no padrão do guia e <strong>anexe o boleto ou a nota</strong>.</li>
+            <li>Salve. A conta fica em aberto até ser marcada como paga.</li>
+          </ol>
+          <p class="sys-sub">Atalhos que economizam digitação</p>
+          <ul class="sys-list">
+            <li><strong>Notas de compra:</strong> com o certificado digital configurado, as notas emitidas contra o seu CNPJ são importadas e já viram contas a pagar.</li>
+            <li><strong>Conta Azul IA:</strong> envie o boleto ou a nota e o sistema sugere o lançamento. <em>Confira sempre a categoria antes de confirmar.</em></li>
+          </ul>
+          <p class="sys-sub">Para dar baixa (depois de pagar)</p>
+          <ol class="num-steps">
+            <li>Abra a conta em <strong>Financeiro › Contas a pagar</strong> e marque como paga, informando a <strong>data real</strong> e a conta bancária.</li>
+            <li>Se o banco está integrado, deixe a baixa para a conciliação — ela acontece ao confirmar o extrato.</li>
+          </ol>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp verde">Entrada</span><h4>Contas a Receber</h4></div>
+          <p class="sys-sub">Para registrar uma conta</p>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Financeiro</span><span class="sep">›</span><span>Contas a receber</span></div>
+          <ol class="num-steps">
+            <li>Vendas criadas em <strong>Vendas › Nova venda</strong> já geram a cobrança e a conta a receber. Confira a lista antes de lançar de novo.</li>
+            <li>Para um recebimento avulso, crie a conta com <strong>Cliente</strong>, <strong>Categoria</strong> de receita, <strong>Vencimento</strong>, <strong>Valor</strong> e conta bancária.</li>
+            <li>Descreva com cliente e referência e salve.</li>
+          </ol>
+          <p class="sys-sub">Para dar baixa (depois de receber)</p>
+          <ol class="num-steps">
+            <li>Marque como recebida com a data em que o dinheiro <strong>caiu na conta</strong> — ou deixe a conciliação fazer isso, se o banco estiver integrado.</li>
+          </ol>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp azul">Conferência</span><h4>Conciliação Bancária</h4></div>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Financeiro</span><span class="sep">›</span><span>Outras contas</span><span class="sep">›</span><span>Conciliar</span></div>
+          <ol class="num-steps">
+            <li>Conecte o banco à Conta Azul (o extrato passa a chegar todo dia) ou importe o extrato em <strong>OFX</strong>.</li>
+            <li>Vá em <strong>Financeiro › Outras contas</strong>: ali aparecem todas as contas bancárias e as conciliações pendentes.</li>
+            <li>Abra a conta. Para cada linha do extrato, o sistema <strong>sugere</strong> o lançamento que bate.</li>
+            <li>Conferiu valor, data e categoria? Clique em <strong>Conciliar</strong>. Não há lançamento para aquela linha? Crie ali mesmo, com a categoria certa.</li>
+            <li>No final, confira se o saldo da Conta Azul ficou <strong>igual</strong> ao saldo do banco.</li>
+          </ol>
+          <div class="errado"><span class="rotulo">Atenção</span><p>A sugestão automática ajuda, mas não substitui a sua conferência. Antes de clicar em Conciliar, olhe se a categoria sugerida faz sentido.</p></div>
+        </div>
+      </div>
+
+      <!-- ===================== BLING ===================== -->
+      <div class="sys-panel" id="sys-bling" role="tabpanel">
+        <p class="sys-intro">No Bling, o financeiro fica no menu <strong>Financeiro</strong> (em algumas telas aparece como <strong>Finanças</strong>).</p>
+
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp vermelho">Saída</span><h4>Contas a Pagar</h4></div>
+          <p class="sys-sub">Para registrar uma conta</p>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Financeiro</span><span class="sep">›</span><span>Contas a pagar</span><span class="sep">›</span><span>incluir nova conta</span></div>
+          <ol class="num-steps">
+            <li>Preencha: <strong>Fornecedor</strong>, <strong>Categoria</strong> (conta do plano de contas), <strong>Vencimento</strong>, <strong>Valor</strong> e a conta bancária (o "portador", cadastrado em Caixas e Bancos).</li>
+            <li>Escreva o histórico no padrão do guia: <em>forma de pagamento — fornecedor — referência</em>.</li>
+            <li>Salve. Compras e notas de entrada lançadas no Bling podem gerar a conta a pagar automaticamente — confira para não duplicar.</li>
+          </ol>
+          <p class="sys-sub">Para dar baixa (depois de pagar)</p>
+          <ol class="num-steps">
+            <li>Em <strong>Financeiro › Contas a pagar</strong>, localize a conta e registre o pagamento com a <strong>data real</strong> e a conta bancária usada.</li>
+            <li>Pagou várias parcelas com um único débito no banco? Baixe essas parcelas <strong>juntas (agrupadas)</strong>, com o valor total. Assim a conciliação encontra o par certo no extrato.</li>
+          </ol>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp verde">Entrada</span><h4>Contas a Receber</h4></div>
+          <p class="sys-sub">Para registrar uma conta</p>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Financeiro</span><span class="sep">›</span><span>Contas a receber</span></div>
+          <ol class="num-steps">
+            <li>Pedidos de venda e notas emitidas no Bling geram as contas a receber. Confira a lista antes de incluir à mão.</li>
+            <li>Para um recebimento avulso, inclua com <strong>Cliente</strong>, <strong>Categoria</strong> de receita, <strong>Vencimento</strong>, <strong>Valor</strong> e conta bancária.</li>
+          </ol>
+          <p class="sys-sub">Para dar baixa (depois de receber)</p>
+          <ol class="num-steps">
+            <li>Registre o recebimento com a data em que o dinheiro <strong>caiu na conta</strong>.</li>
+            <li>Vendeu em marketplace ou na maquininha? O valor costuma cair <strong>descontado das taxas</strong>. Lance a venda pelo valor cheio e a taxa separada, em <strong>Taxas de Cartão e Maquininha</strong>.</li>
+          </ol>
+        </div>
+
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp azul">Conferência</span><h4>Conciliação Bancária</h4></div>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Financeiro</span><span class="sep">›</span><span>Caixas e Bancos</span><span class="sep">›</span><span>Conciliação</span><span class="sep">›</span><span>+ Selecione um arquivo</span></div>
+          <ol class="num-steps">
+            <li>Baixe o extrato em <strong>OFX</strong> no internet banking.</li>
+            <li>Em <strong>Financeiro › Caixas e Bancos</strong>, escolha a conta, clique em <strong>Conciliação</strong> e depois em <strong>+ Selecione um arquivo</strong>.</li>
+            <li>Para cada linha do extrato, vincule a conta a pagar ou a receber correspondente.</li>
+            <li>Linha sem par no Bling (tarifa, rendimento, IOF)? Crie o lançamento com a categoria certa e vincule.</li>
+            <li>No final, confira se o saldo do Bling ficou <strong>igual</strong> ao saldo do banco.</li>
+          </ol>
+          <div class="errado"><span class="rotulo">Cuidado</span><p>Não importe dois arquivos OFX com <strong>datas repetidas</strong>: as movimentações ficam duplicadas. Baixe sempre o extrato a partir do dia seguinte à última importação.</p></div>
+          <div class="dica"><span class="rotulo">Usa a conta digital do Bling?</span><p>Nela, a conciliação é automática — não é preciso importar OFX. Mesmo assim, confira as categorias.</p></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:30px; font-size:1.05rem;">Vale para os três sistemas</h3>
+      <div class="card">
+        <div class="rec-cards">
+          <div class="rec-card"><span class="dotc"></span>Toda conta tem categoria do plano de contas</div>
+          <div class="rec-card"><span class="dotc"></span>Descrição no padrão: forma — quem — referência</div>
+          <div class="rec-card"><span class="dotc"></span>Anexe boleto, nota ou comprovante</div>
+          <div class="rec-card"><span class="dotc"></span>Baixa com a data real e a conta bancária certa</div>
+        </div>
+        <div class="errado" style="margin-top:16px;"><span class="rotulo">Erros mais comuns no sistema</span>
+          <p>• Usar "Pix" ou "Boleto" como categoria &nbsp;• Lançar o pagamento da fatura do cartão como despesa nova &nbsp;• Dar baixa na conta bancária errada &nbsp;• Lançar de novo uma venda que o sistema já tinha gerado &nbsp;• Excluir um lançamento já conciliado para "fechar" o saldo</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:26px; font-size:1.05rem;">Rotina no sistema</h3>
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline-item"><span class="freq">Todo dia (ou no dia seguinte)</span><h4>Registrar</h4><p>Lançar as contas novas que chegaram — boletos, notas, vendas avulsas — com categoria e anexo.</p></div>
+          <div class="timeline-item"><span class="freq">Toda semana</span><h4>Dar baixa e conciliar</h4><p>Baixar o que foi pago e recebido e conciliar o extrato da semana. Quanto menos acumula, mais rápido fica.</p></div>
+          <div class="timeline-item"><span class="freq">Todo mês, antes do fechamento</span><h4>Conferir e enviar dúvidas</h4><p>Saldo do sistema igual ao do banco em todas as contas, nenhuma conta sem categoria e dúvidas enviadas à controladoria.</p></div>
+        </div>
+      </div>
+
+      <p class="sys-note">Os caminhos de menu foram revisados em novembro de 2026, com base nas centrais de ajuda de cada sistema. Os sistemas podem mudar o nome ou o lugar dos botões: se não encontrar, procure pelo nome da tela (ex.: "Contas a Pagar") na busca do próprio sistema ou fale com a controladoria. Ajuda oficial: <a href="https://ajuda.omie.com.br" target="_blank" rel="noopener">OMIE</a> · <a href="https://contaazul.com/tutoriais/" target="_blank" rel="noopener">Conta Azul</a> · <a href="https://ajuda.bling.com.br" target="_blank" rel="noopener">Bling</a>.</p>
+    </section>
+
+    <!-- 7. NOTAS FISCAIS -->
+    <section class="section" id="notas-fiscais">
+      <p class="section-eyebrow"><span class="dot"></span>07 · Prática</p>
+      <h2 class="sec-icon-h3"><span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span> Notas Fiscais</h2>
+      <p>A nota fiscal é o documento que registra oficialmente uma venda ou uma prestação de serviço. Aqui você entende qual nota usar, o que significa cada campo, como emitir no seu sistema e o que muda com a Reforma Tributária.</p>
+
+      <!-- TIPOS -->
+      <h3 style="margin-top:8px; font-size:1.05rem;">Quais são os principais tipos de nota e quando usar cada um?</h3>
+      <table class="compare-table">
+        <thead><tr><th>Nota</th><th>Para que serve</th><th>Exemplo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>NF-e</strong><br><span class="tbl-sub">Nota de produto · modelo 55</span></td><td>Venda ou circulação de <strong>mercadorias</strong>, principalmente para outras empresas e entre estados. Também usada em devoluções, remessas e transferências.</td><td>Distribuidora vende 200 caixas de produto para um mercado.</td></tr>
+          <tr><td><strong>NFC-e</strong><br><span class="tbl-sub">Nota do consumidor · modelo 65</span></td><td>Venda no <strong>varejo</strong> para o consumidor final, no balcão ou no caixa da loja. Substitui o antigo cupom fiscal.</td><td>Loja vende um par de tênis para um cliente pessoa física.</td></tr>
+          <tr><td><strong>NFS-e</strong><br><span class="tbl-sub">Nota de serviço</span></td><td>Prestação de <strong>serviços</strong>: consultoria, manutenção, estética, aulas, agência, clínica.</td><td>Agência entrega um projeto de marketing para um cliente.</td></tr>
+        </tbody>
+      </table>
+      <div class="dica"><span class="rotulo">E o DANFE?</span><p>O DANFE não é outra nota: é só a <strong>versão impressa (ou em PDF)</strong> da NF-e, que acompanha a mercadoria. A nota de verdade é o arquivo <strong>XML</strong> — é ele que deve ser guardado.</p></div>
+
+      <!-- DIFERENÇAS -->
+      <h3 style="margin-top:26px; font-size:1.05rem;">Diferenças entre nota de produto e nota de serviço</h3>
+      <table class="compare-table">
+        <thead><tr><th></th><th>Nota de produto (NF-e / NFC-e)</th><th>Nota de serviço (NFS-e)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>O que registra</strong></td><td>Mercadoria que sai do estoque</td><td>Trabalho prestado</td></tr>
+          <tr><td><strong>Quem autoriza</strong></td><td>Secretaria da Fazenda do estado (Sefaz)</td><td>Emissor Nacional da NFS-e (antes, cada prefeitura tinha o seu)</td></tr>
+          <tr><td><strong>Cadastro exigido</strong></td><td>Inscrição Estadual</td><td>Inscrição Municipal</td></tr>
+          <tr><td><strong>Código do item</strong></td><td><strong>NCM</strong> (8 dígitos que classificam o produto)</td><td><strong>Código do serviço</strong> (lista nacional / NBS)</td></tr>
+          <tr><td><strong>Impostos de hoje</strong></td><td>ICMS, IPI (indústria), PIS e Cofins</td><td>ISS, PIS e Cofins</td></tr>
+          <tr><td><strong>Com a Reforma</strong></td><td colspan="2">Os dois tipos passam a trazer os novos tributos <strong>CBS</strong> e <strong>IBS</strong> — veja a linha do tempo mais abaixo.</td></tr>
+        </tbody>
+      </table>
+      <div class="errado"><span class="rotulo">Atenção</span><p>Vende produto <strong>e</strong> serviço para o mesmo cliente? Em geral são <strong>duas notas</strong>: uma NF-e para a peça e uma NFS-e para a mão de obra. Confirme o seu caso com a contabilidade.</p></div>
+
+      <!-- QUEM EMITE -->
+      <h3 style="margin-top:26px; font-size:1.05rem;">Quem precisa emitir a nota nas operações comerciais?</h3>
+      <div class="grid-2">
+        <div class="card"><span class="stamp azul">Regra geral</span><p style="margin-top:10px;">Quem <strong>vende</strong> o produto ou <strong>presta</strong> o serviço emite a nota. Toda empresa com CNPJ que vende ou presta serviço precisa emitir.</p>
+          <div class="exemplo"><span class="rotulo">Exemplo</span><p>A gráfica imprime seus panfletos → <strong>a gráfica</strong> emite a nota para você.</p></div></div>
+        <div class="card"><span class="stamp amarelo">Situações especiais</span>
+          <ul class="sys-list" style="margin-top:12px;">
+            <li><strong>Devolução:</strong> quem devolve a mercadoria emite a nota de devolução (se for empresa).</li>
+            <li><strong>MEI vendendo para pessoa física:</strong> não é obrigado a emitir, a menos que o cliente peça. Para empresas, sempre emite.</li>
+            <li><strong>Remessa sem venda</strong> (conserto, demonstração, comodato): também exige nota.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dica"><span class="rotulo">Do outro lado do balcão</span><p>Quando <strong>você</strong> compra, cobre a nota do fornecedor. Ela é o comprovante do gasto e é o que permite lançar a despesa no lugar certo do plano de contas.</p></div>
+
+      <!-- O QUE É PRECISO -->
+      <h3 style="margin-top:26px; font-size:1.05rem;">Passo a passo para emitir nota eletrônica: o que é preciso?</h3>
+      <p>Antes da primeira nota, deixe isto pronto (normalmente com a ajuda da contabilidade):</p>
+      <ul class="checklist">
+        <li><span class="box"></span><div><strong>CNPJ ativo e regime tributário definido</strong><span class="desc">MEI, Simples Nacional, Lucro Presumido ou Lucro Real. O regime muda os impostos da nota.</span></div></li>
+        <li><span class="box"></span><div><strong>Inscrição Estadual (produto) ou Municipal (serviço)</strong><span class="desc">Sem ela, a Sefaz ou o Emissor Nacional não autorizam a nota.</span></div></li>
+        <li><span class="box"></span><div><strong>Certificado digital da empresa</strong><span class="desc">É a "assinatura eletrônica" da nota. O mais usado é o A1, um arquivo instalado no sistema.</span></div></li>
+        <li><span class="box"></span><div><strong>Sistema emissor configurado</strong><span class="desc">OMIE, Conta Azul, Bling ou outro, com as configurações fiscais (impostos, CFOP, código de serviço) revisadas pela contabilidade.</span></div></li>
+        <li><span class="box"></span><div><strong>Cadastros completos</strong><span class="desc">Clientes com CNPJ/CPF e endereço; produtos com NCM; serviços com o código correto.</span></div></li>
+      </ul>
+
+      <p style="margin-top:18px;">Com tudo pronto, a emissão segue sempre este caminho:</p>
+      <div class="steps">
+        <div class="step-card"><div class="step-num">1</div><h4>Escolha a nota</h4><p>Produto (NF-e ou NFC-e) ou serviço (NFS-e).</p></div>
+        <div class="step-card"><div class="step-num">2</div><h4>Preencha</h4><p>Cliente, itens, quantidades, valores, natureza da operação e forma de pagamento.</p></div>
+        <div class="step-card"><div class="step-num">3</div><h4>Confira e envie</h4><p>Revise os impostos calculados e transmita. A nota só vale depois de <strong>autorizada</strong>.</p></div>
+        <div class="step-card"><div class="step-num">4</div><h4>Entregue e guarde</h4><p>Envie o PDF e o XML ao cliente. Guarde o XML por no mínimo 5 anos.</p></div>
+      </div>
+
+      <!-- CAMPOS -->
+      <h3 style="margin-top:26px; font-size:1.05rem;">Entendendo os principais campos da nota</h3>
+      <div class="grid-3">
+        <div class="card glos"><h4>Emitente e destinatário</h4><p>Quem vende e quem compra: razão social, CNPJ/CPF, endereço e inscrições. Erro aqui costuma exigir cancelamento.</p></div>
+        <div class="card glos"><h4>Natureza da operação</h4><p>Diz o "porquê" da nota em palavras: venda, devolução, remessa para conserto, bonificação.</p></div>
+        <div class="card glos"><h4>CFOP</h4><p>Código de 4 dígitos do tipo de operação. Ex.: <strong>5102</strong> venda de mercadoria no mesmo estado; <strong>6102</strong> para outro estado.</p></div>
+        <div class="card glos"><h4>NCM / código do serviço</h4><p>Classifica o que está sendo vendido. É ele que define as regras de imposto do item.</p></div>
+        <div class="card glos"><h4>Valores</h4><p>Preço unitário, quantidade, descontos, frete e o valor total da nota.</p></div>
+        <div class="card glos"><h4>Impostos</h4><p>ICMS, IPI, ISS, PIS, Cofins e, agora, <strong>CBS</strong> e <strong>IBS</strong>. O sistema calcula conforme a configuração fiscal.</p></div>
+        <div class="card glos"><h4>Informações complementares</h4><p>Observações obrigatórias (ex.: "Empresa optante pelo Simples Nacional") e dados extras, como número do pedido.</p></div>
+        <div class="card glos"><h4>Chave de acesso</h4><p>Número de 44 dígitos que identifica a NF-e. Serve para consultar a nota no portal da Sefaz.</p></div>
+        <div class="card glos"><h4>Protocolo de autorização</h4><p>Prova de que a nota foi aceita. Sem protocolo, a nota não tem validade.</p></div>
+      </div>
+
+      <!-- GUIA POR TIPO -->
+      <h3 style="margin-top:26px; font-size:1.05rem;">Como emitir nota fiscal: guia por tipo de situação</h3>
+      <details class="accordion-item">
+        <summary>Venda de produto para outra empresa (NF-e)</summary>
+        <div class="accordion-body">
+          <ol class="num-steps">
+            <li>Crie o pedido de venda (ou a nota direto) com o cliente e os produtos.</li>
+            <li>Confira a natureza da operação (<em>Venda</em>) e o CFOP: começa com 5 dentro do estado e com 6 para outro estado.</li>
+            <li>Informe frete, desconto e forma de pagamento.</li>
+            <li>Transmita, aguarde a autorização e envie o DANFE e o XML ao cliente.</li>
+          </ol>
+        </div>
+      </details>
+      <details class="accordion-item">
+        <summary>Venda no balcão para consumidor final (NFC-e)</summary>
+        <div class="accordion-body">
+          <ol class="num-steps">
+            <li>Registre a venda no ponto de venda (PDV) do sistema.</li>
+            <li>CPF do cliente é opcional, a não ser que ele peça.</li>
+            <li>A nota é autorizada na hora; entregue o comprovante impresso ou envie por e-mail ou WhatsApp.</li>
+          </ol>
+          <div class="dica"><span class="rotulo">Atenção</span><p>A NFC-e é só para consumidor final. Vendeu para uma empresa? Emita NF-e.</p></div>
+        </div>
+      </details>
+      <details class="accordion-item">
+        <summary>Prestação de serviço (NFS-e)</summary>
+        <div class="accordion-body">
+          <ol class="num-steps">
+            <li>Crie a ordem de serviço ou a venda de serviço com o cliente.</li>
+            <li>Descreva o serviço com clareza (o que foi feito, período, contrato) e escolha o código de serviço correto.</li>
+            <li>Confira se há <strong>retenção</strong> de impostos (ISS, IR, INSS). A contabilidade define quando se aplica.</li>
+            <li>Transmita e envie a nota ao cliente.</li>
+          </ol>
+        </div>
+      </details>
+      <details class="accordion-item">
+        <summary>Devolução de mercadoria</summary>
+        <div class="accordion-body">
+          <p>Quem devolve emite uma NF-e com natureza <em>Devolução</em>, <strong>referenciando a chave de acesso da nota original</strong>. Os valores e impostos devem espelhar a nota original, na proporção do que voltou. No financeiro, lance em <strong>Devoluções de Vendas</strong> ou <strong>Devoluções de Compras</strong>, conforme o lado.</p>
+        </div>
+      </details>
+      <details class="accordion-item">
+        <summary>Remessa sem venda (conserto, demonstração, comodato)</summary>
+        <div class="accordion-body">
+          <p>O produto sai, mas não é vendido. Emita NF-e com a natureza correspondente (ex.: <em>Remessa para conserto</em>). Quando o produto voltar, quem o devolve emite a nota de <em>Retorno</em>. Essas notas <strong>não</strong> são receita: não lance como venda.</p>
+        </div>
+      </details>
+      <details class="accordion-item">
+        <summary>Errei a nota. E agora?</summary>
+        <div class="accordion-body">
+          <ul class="sys-list">
+            <li><strong>Erro pequeno</strong> (endereço, texto das informações complementares): na NF-e, use a <strong>Carta de Correção</strong>. Ela <u>não</u> corrige valores, impostos, quantidades nem o destinatário.</li>
+            <li><strong>Erro em valor, item ou cliente:</strong> <strong>cancele</strong> a nota dentro do prazo (para a NF-e, em geral 24 horas após a autorização) e emita uma nova.</li>
+            <li><strong>Passou o prazo?</strong> Pode ser preciso nota complementar ou de devolução. Fale com a contabilidade antes de fazer qualquer coisa.</li>
+            <li><strong>NFS-e:</strong> as regras de cancelamento e substituição seguem o Emissor Nacional e o município. Na dúvida, consulte a contabilidade.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- NO SISTEMA -->
+      <h3 style="margin-top:26px; font-size:1.05rem;">Emitindo no seu sistema</h3>
+      <p>Escolha o sistema da sua empresa. A aba fica sincronizada com a seção <a href="#sistemas">Usando seu Sistema</a>.</p>
+      <div class="sys-tabs" role="tablist" aria-label="Escolha o sistema para emitir notas">
+        <button class="sys-tab" role="tab" data-sys="omie" aria-controls="nf-omie">OMIE</button>
+        <button class="sys-tab" role="tab" data-sys="contaazul" aria-controls="nf-contaazul">Conta Azul</button>
+        <button class="sys-tab" role="tab" data-sys="bling" aria-controls="nf-bling">Bling</button>
+      </div>
+
+      <div class="sys-panel" id="nf-omie" role="tabpanel">
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp azul">Produto</span><h4>NF-e a partir do Pedido de Venda</h4></div>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Vendas e NF-e</span><span class="sep">›</span><span>Venda de Produto</span><span class="sep">›</span><span>Incluir</span><span class="sep">›</span><span>Faturar Agora</span></div>
+          <ol class="num-steps">
+            <li>Inclua o pedido com cliente, produtos e quantidades. Se o <strong>Cenário Fiscal</strong> estiver configurado, os impostos são preenchidos sozinhos.</li>
+            <li>Confira tudo e clique em <strong>"Faturar Agora"</strong>, no menu da direita. Confirme com <strong>"Sim"</strong>.</li>
+            <li>Acompanhe a autorização. O faturamento também gera a <strong>conta a receber</strong> e dá baixa no estoque.</li>
+          </ol>
+        </div>
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp verde">Serviço</span><h4>NFS-e a partir da Ordem de Serviço</h4></div>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Serviços</span><span class="sep">›</span><span>Ordens de Serviço</span><span class="sep">›</span><span>Faturar Selecionada</span></div>
+          <ol class="num-steps">
+            <li>Cadastre a Ordem de Serviço com o cliente e o serviço prestado.</li>
+            <li>Na lista, selecione a OS e clique em <strong>"Faturar Selecionada"</strong>. Para várias de uma vez, use <strong>"Faturar Selecionados"</strong>.</li>
+            <li>Acompanhe o retorno. Se a nota for rejeitada, o OMIE mostra o motivo para você corrigir a OS.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="sys-panel" id="nf-contaazul" role="tabpanel">
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp azul">Produto</span><h4>Nota a partir de uma venda</h4></div>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Tela inicial</span><span class="sep">›</span><span>Nova venda</span><span class="sep">›</span><span>Emitir nota fiscal</span></div>
+          <ol class="num-steps">
+            <li>Clique em <strong>Nova venda</strong> e escolha o cliente (ou cadastre na hora).</li>
+            <li>Adicione os produtos e a forma de pagamento.</li>
+            <li>Clique em <strong>Salvar e ir para cobrança</strong> e, no fim do processo, em <strong>Emitir nota fiscal</strong>.</li>
+          </ol>
+        </div>
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp verde">Serviço</span><h4>NFS-e a partir da venda de serviço</h4></div>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Serviços</span><span class="sep">›</span><span>Vendas de serviços</span><span class="sep">›</span><span>Nota fiscal</span><span class="sep">›</span><span>Emitir nota fiscal</span></div>
+          <ol class="num-steps">
+            <li>Inicie uma nova venda de serviço e escolha o cliente.</li>
+            <li>Informe a <strong>descrição</strong> e o <strong>valor</strong> do serviço e a forma de pagamento.</li>
+            <li>Gere a cobrança e clique em <strong>Nota fiscal › Emitir nota fiscal</strong>.</li>
+          </ol>
+          <div class="dica"><span class="rotulo">Contrato mensal?</span><p>Cadastre o contrato com cliente, serviço e duração: a Conta Azul envia cobrança e nota todo mês, sozinha.</p></div>
+        </div>
+      </div>
+
+      <div class="sys-panel" id="nf-bling" role="tabpanel">
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp azul">Produto</span><h4>NF-e</h4></div>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Vendas</span><span class="sep">›</span><span>Notas Fiscais de Saída</span><span class="sep">›</span><span>Incluir Nota Fiscal</span></div>
+          <ol class="num-steps">
+            <li>Crie a nota direto por aqui ou a partir de um pedido em <strong>Vendas › Pedidos de venda</strong>.</li>
+            <li>Preencha os dados da nota, o cliente e os itens. Salve.</li>
+            <li>Na lista, clique nos <strong>três pontos</strong> da nota e em <strong>"Enviar nota fiscal"</strong>. Para várias de uma vez, selecione e envie as notas selecionadas.</li>
+          </ol>
+        </div>
+        <div class="proc-card">
+          <div class="proc-head"><span class="stamp verde">Serviço</span><h4>NFS-e</h4></div>
+          <div class="menu-path"><span class="lbl">Caminho</span><span>Vendas</span><span class="sep">›</span><span>Notas de serviço</span></div>
+          <ol class="num-steps">
+            <li>Inclua a nota com cliente, serviço, descrição e valor.</li>
+            <li>Confira os impostos (ISS, retenções). As configurações de serviço são feitas uma vez, com o contador.</li>
+            <li>Envie e acompanhe a autorização.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 2026 / 2027 -->
+      <h3 style="margin-top:30px; font-size:1.05rem;">O que mudou na emissão de notas em 2026 e o que muda em 2027</h3>
+      <p>A Reforma Tributária está trocando os impostos sobre consumo por dois novos: a <strong>CBS</strong> (federal, no lugar de PIS e Cofins) e o <strong>IBS</strong> (estados e municípios, no lugar de ICMS e ISS). A nota fiscal é onde essa mudança aparece primeiro.</p>
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline-item"><span class="freq">Janeiro de 2026</span><h4>Começam os novos campos e a NFS-e Nacional</h4><p>Empresas do Lucro Presumido e Real passam a informar CBS (0,9%) e IBS (0,1%) nas notas. É uma <strong>alíquota de teste</strong>, sem cobrança efetiva. As prefeituras passam a usar o padrão nacional da NFS-e.</p></div>
+          <div class="timeline-item"><span class="freq">Agosto de 2026</span><h4>Nota sem CBS/IBS passa a ser recusada</h4><p>Para Lucro Presumido e Real, a nota sem esses campos deixa de ser autorizada.</p></div>
+          <div class="timeline-item"><span class="freq">1º de novembro de 2026</span><h4>Simples Nacional emite serviço no Emissor Nacional</h4><p>Micro e pequenas empresas do Simples passam a emitir a NFS-e <strong>só pelo Emissor Nacional</strong> (site, app ou integração do sistema). O MEI já emite assim desde 2023.</p></div>
+          <div class="timeline-item"><span class="freq">Janeiro de 2027</span><h4>Virada de chave</h4><p>PIS e Cofins acabam e dão lugar à CBS. O IPI vai a zero na maioria dos produtos. Simples Nacional e MEI passam a ser <strong>obrigados</strong> a preencher os campos de CBS e IBS nas notas.</p></div>
+          <div class="timeline-item"><span class="freq">De 2027 a 2033</span><h4>Transição gradual</h4><p>ICMS e ISS vão sendo substituídos pelo IBS aos poucos, até a troca completa.</p></div>
+        </div>
+      </div>
+
+      <h4 style="margin-top:20px; font-size:0.95rem;">O que fazer agora</h4>
+      <div class="rec-cards">
+        <div class="rec-card"><span class="dotc"></span>Confirme que o sistema emissor está atualizado para CBS e IBS</div>
+        <div class="rec-card"><span class="dotc"></span>Revise com a contabilidade o cadastro de produtos e serviços (NCM, código de serviço, classificação tributária)</div>
+        <div class="rec-card"><span class="dotc"></span>Emita uma nota de teste antes de janeiro de 2027, se for do Simples</div>
+        <div class="rec-card"><span class="dotc"></span>Confira se as notas dos fornecedores já chegam com os novos campos</div>
+      </div>
+      <div class="errado" style="margin-top:16px;"><span class="rotulo">Importante</span><p>As regras da Reforma ainda estão recebendo ajustes e prazos novos. Este resumo foi revisado em novembro de 2026. Antes de mudar qualquer configuração de imposto no sistema, <strong>confirme com a contabilidade</strong>.</p></div>
+    </section>
+
+    <!-- 8. PLANO DE CONTAS -->
     <section class="section" id="plano-contas">
-      <p class="section-eyebrow"><span class="dot"></span>06 · Consulta</p>
+      <p class="section-eyebrow"><span class="dot"></span>08 · Consulta</p>
       <h2 class="sec-icon-h3"><span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span> Plano de Contas</h2>
       <p>Filtre pelo segmento do seu negócio, procure pelo nome da conta, marque suas favoritas e baixe a planilha em Excel para consulta offline.</p>
 
@@ -906,9 +1405,9 @@ strong{ color:var(--azul-sattva); }
       <p style="font-size:0.78rem; color:var(--cinza-medio); margin-top:10px;">As contas mostradas aqui vêm de <code style="background:var(--fundo); padding:1px 6px; border-radius:4px;">data/plano-de-contas.json</code>. Suas favoritas ficam salvas só neste navegador.</p>
     </section>
 
-    <!-- 7. FAQ -->
+    <!-- 9. FAQ -->
     <section class="section" id="faq">
-      <p class="section-eyebrow"><span class="dot"></span>07 · Dúvidas</p>
+      <p class="section-eyebrow"><span class="dot"></span>09 · Dúvidas</p>
       <h2 class="sec-icon-h3"><span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.7-2.5 2-2.5 4"/><circle cx="12" cy="17" r="0.6" fill="#fff"/></svg></span> Perguntas Frequentes</h2>
       <p>Dúvidas gerais sobre o guia, o plano de contas e os lançamentos. Para dúvidas específicas de conciliação bancária, veja o acordeão dentro da própria página de <a href="#conciliacao">Conciliação Bancária</a>.</p>
       <details class="accordion-item">
@@ -926,6 +1425,10 @@ strong{ color:var(--azul-sattva); }
       <details class="accordion-item">
         <summary>E se eu não souber em qual conta lançar algo?</summary>
         <div class="accordion-body">Consulte o <a href="#plano-contas">Plano de Contas</a> — cada conta tem exemplos práticos. Se restar dúvida, pergunte à controladoria antes do fechamento do mês.</div>
+      </details>
+      <details class="accordion-item">
+        <summary>Meu sistema não é OMIE, Conta Azul nem Bling. O guia serve?</summary>
+        <div class="accordion-body">Serve. O caminho é o mesmo em qualquer sistema: registrar, pagar ou receber, dar baixa e conciliar. Os nomes dos menus mudam, mas as telas de Contas a Pagar, Contas a Receber e Conciliação existem em praticamente todos. Na dúvida, fale com a controladoria.</div>
       </details>
       <details class="accordion-item">
         <summary>Vale a pena lançar valores muito pequenos?</summary>
@@ -992,6 +1495,8 @@ sections.forEach(s => observer.observe(s));
 
 /* keyword -> section map, used by both search boxes */
 const SEARCH_MAP = [
+  { words: ['nota fiscal','notas fiscais','nf-e','nfe','nfs-e','nfse','nfc-e','nfce','danfe','cfop','ncm','reforma','cbs','ibs','emitir','emissão','emissao','carta de correção','cancelar nota'], id: 'notas-fiscais' },
+  { words: ['omie','conta azul','bling','erp','sistema','contas a pagar','contas a receber','dar baixa','ofx','open finance'], id: 'sistemas' },
   { words: ['dre','competencia','competência','caixa','fluxo','indicador','conceito','regime','custo','provisao','provisão','entrada','saida','saída','credito','crédito','debito','débito'], id: 'conceitos' },
   { words: ['nova conta','criar conta','fluxograma'], id: 'nova-conta' },
   { words: ['escolher conta','conta certa'], id: 'escolher-conta' },
@@ -1004,6 +1509,11 @@ function goToSearch(term){
   const q = term.toLowerCase();
   let dest = 'plano-contas';
   for (const m of SEARCH_MAP) { if (m.words.some(w => q.includes(w))) { dest = m.id; break; } }
+  if (dest === 'sistemas' || dest === 'notas-fiscais') {
+    if (q.includes('omie')) showSys('omie');
+    else if (q.includes('conta azul')) showSys('contaazul');
+    else if (q.includes('bling')) showSys('bling');
+  }
   document.getElementById(dest).scrollIntoView({behavior:'smooth'});
 }
 document.getElementById('heroSearchForm').addEventListener('submit', (e) => {
@@ -1254,6 +1764,26 @@ if (conciliaList) {
   });
   renderConciliaProgress();
 }
+
+/* ======================================================================
+   USANDO SEU SISTEMA — abas OMIE / Conta Azul / Bling
+   (o sistema escolhido fica lembrado neste navegador)
+   ====================================================================== */
+const SYS_KEY = 'guiafinanceiro_sistema';
+function showSys(id){
+  document.querySelectorAll('.sys-tab').forEach(t => {
+    const on = t.getAttribute('data-sys') === id;
+    t.classList.toggle('active', on);
+    t.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  document.querySelectorAll('.sys-panel').forEach(p => p.classList.toggle('active', p.id === 'sys-' + id || p.id === 'nf-' + id));
+  try { localStorage.setItem(SYS_KEY, id); } catch (e) {}
+}
+document.querySelectorAll('.sys-tab').forEach(t => t.addEventListener('click', () => showSys(t.getAttribute('data-sys'))));
+let savedSys = 'omie';
+try { savedSys = localStorage.getItem(SYS_KEY) || 'omie'; } catch (e) {}
+if (!document.getElementById('sys-' + savedSys)) savedSys = 'omie';
+showSys(savedSys);
 </script>
 </body>
 </html>
