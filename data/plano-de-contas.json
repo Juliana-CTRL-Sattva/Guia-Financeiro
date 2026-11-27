@@ -1,0 +1,2107 @@
+{
+  "_sobre": "Cada objeto da lista 'contas' é uma conta do Plano de Contas. O campo 'grupo' agrupa as contas na tela. Veja README-manutencao.md para adicionar ou editar contas.",
+  "contas": [
+    {
+      "codigo": "1.1.001",
+      "grupo": "Receitas Operacionais",
+      "titulo": "Receita de Vendas de Mercadorias",
+      "categoria": "Receita",
+      "cor": "verde",
+      "segmentos": [
+        "comercio"
+      ],
+      "definicao": "Valor das vendas de produtos que a empresa compra prontos e revende.",
+      "quandoUsar": "Venda de mercadoria a consumidor final ou a outra empresa.",
+      "quandoNaoUsar": "Venda de serviços ou de produtos que a própria empresa fabrica.",
+      "exemplo": "Loja vende uma camisa por R$ 89,90 — lança R$ 89,90 aqui.",
+      "observacao": "Descontos dados ao cliente vão em Descontos Concedidos, não são abatidos daqui."
+    },
+    {
+      "codigo": "1.1.002",
+      "grupo": "Receitas Operacionais",
+      "titulo": "Receita de Serviços",
+      "categoria": "Receita",
+      "cor": "verde",
+      "segmentos": [
+        "servicos"
+      ],
+      "definicao": "Valor recebido por serviços prestados a clientes.",
+      "quandoUsar": "Projetos, horas técnicas e serviços avulsos.",
+      "quandoNaoUsar": "Mensalidades com contrato fixo (use Receita de Mensalidades e Contratos) e venda de produtos.",
+      "exemplo": "Agência entrega um projeto e recebe R$ 4.000,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "1.1.003",
+      "grupo": "Receitas Operacionais",
+      "titulo": "Receita de Venda de Produtos Fabricados",
+      "categoria": "Receita",
+      "cor": "verde",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Valor das vendas de produtos que a própria empresa fabrica.",
+      "quandoUsar": "Venda de item produzido internamente.",
+      "quandoNaoUsar": "Venda de itens comprados prontos de terceiros.",
+      "exemplo": "Marcenaria vende uma mesa fabricada por R$ 1.200,00.",
+      "observacao": "Não confundir com Receita de Vendas de Mercadorias (item revendido sem transformação)."
+    },
+    {
+      "codigo": "1.1.004",
+      "grupo": "Receitas Operacionais",
+      "titulo": "Receita de Mensalidades e Contratos",
+      "categoria": "Receita",
+      "cor": "verde",
+      "segmentos": [
+        "servicos"
+      ],
+      "definicao": "Valor recebido de clientes com contrato recorrente (todo mês).",
+      "quandoUsar": "Mensalidades, assinaturas e contratos de manutenção.",
+      "quandoNaoUsar": "Serviços pontuais, que não se repetem.",
+      "exemplo": "Cliente paga R$ 3.500,00 de mensalidade.",
+      "observacao": "Separar o recorrente do pontual mostra o quanto do faturamento é previsível."
+    },
+    {
+      "codigo": "1.2.001",
+      "grupo": "Deduções da Receita",
+      "titulo": "Descontos Concedidos",
+      "categoria": "Receita (redutora)",
+      "cor": "verde",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Desconto dado ao cliente sobre o preço de tabela.",
+      "quandoUsar": "Sempre que um desconto reduzir o valor final da venda.",
+      "quandoNaoUsar": "Brindes e trocas.",
+      "exemplo": "Produto de R$ 100,00 vendido por R$ 90,00: R$ 10,00 aqui e R$ 90,00 na receita.",
+      "observacao": "Mostra o preço cheio antes do desconto, útil para negociar preços."
+    },
+    {
+      "codigo": "1.2.002",
+      "grupo": "Deduções da Receita",
+      "titulo": "Devoluções de Vendas",
+      "categoria": "Receita (redutora)",
+      "cor": "verde",
+      "segmentos": [
+        "comercio",
+        "industria"
+      ],
+      "definicao": "Valor devolvido ao cliente por produto que ele devolveu.",
+      "quandoUsar": "Cliente devolve o produto e recebe o dinheiro de volta ou crédito.",
+      "quandoNaoUsar": "Troca por outro produto do mesmo valor, sem devolução de dinheiro.",
+      "exemplo": "Cliente devolve uma camisa de R$ 89,90 e recebe o valor de volta.",
+      "observacao": "Lance a devolução em vez de apagar a venda original: assim o extrato continua batendo."
+    },
+    {
+      "codigo": "1.2.003",
+      "grupo": "Deduções da Receita",
+      "titulo": "Cancelamentos de Serviços",
+      "categoria": "Receita (redutora)",
+      "cor": "verde",
+      "segmentos": [
+        "servicos"
+      ],
+      "definicao": "Valor devolvido ao cliente por serviço cancelado.",
+      "quandoUsar": "Serviço já cobrado que foi cancelado e reembolsado.",
+      "quandoNaoUsar": "Desconto concedido (use Descontos Concedidos).",
+      "exemplo": "Cliente cancela um projeto e recebe R$ 1.500,00 de volta.",
+      "observacao": "Estorno deve usar a mesma conta do lançamento original; aqui entra o cancelamento comercial."
+    },
+    {
+      "codigo": "1.3.001",
+      "grupo": "Receitas Financeiras",
+      "titulo": "Rendimento de Aplicação",
+      "categoria": "Receita financeira",
+      "cor": "verde",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Ganho obtido em aplicações financeiras (CDB, fundos, poupança).",
+      "quandoUsar": "Somente o rendimento, quando o banco credita o ganho.",
+      "quandoNaoUsar": "O valor aplicado e o resgate do principal (use Aplicações Financeiras e Resgate de Aplicações).",
+      "exemplo": "Aplicou R$ 10.000 e resgatou R$ 10.080: os R$ 80 são rendimento.",
+      "observacao": "O rendimento costuma vir líquido de IR e IOF; confira o informe do banco."
+    },
+    {
+      "codigo": "1.3.002",
+      "grupo": "Receitas Financeiras",
+      "titulo": "Juros Recebidos",
+      "categoria": "Receita financeira",
+      "cor": "verde",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Juros cobrados de clientes que pagaram com atraso.",
+      "quandoUsar": "Juros e multa recebidos junto com o pagamento atrasado.",
+      "quandoNaoUsar": "O valor principal da venda.",
+      "exemplo": "Cliente paga R$ 1.000 com R$ 20 de juros: R$ 20 aqui.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "1.3.003",
+      "grupo": "Receitas Financeiras",
+      "titulo": "Descontos Obtidos",
+      "categoria": "Receita financeira",
+      "cor": "verde",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Desconto que o fornecedor deu no momento do pagamento.",
+      "quandoUsar": "Pagamento antecipado com abatimento no boleto.",
+      "quandoNaoUsar": "Desconto já embutido no preço da compra.",
+      "exemplo": "Boleto de R$ 1.000 pago por R$ 970: R$ 30 aqui.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "1.4.001",
+      "grupo": "Outras Receitas",
+      "titulo": "Aluguéis Recebidos",
+      "categoria": "Outras receitas",
+      "cor": "verde",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valor recebido pelo aluguel de imóvel ou equipamento da empresa.",
+      "quandoUsar": "Quando a empresa aluga algo que é dela para terceiros.",
+      "quandoNaoUsar": "Aluguel que a empresa paga (use Aluguel em Ocupação e Utilidades).",
+      "exemplo": "Empresa aluga uma sala ociosa por R$ 1.800,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "1.4.002",
+      "grupo": "Outras Receitas",
+      "titulo": "Venda de Bens do Imobilizado",
+      "categoria": "Outras receitas",
+      "cor": "verde",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valor recebido pela venda de bens da empresa (veículo, máquina, computador).",
+      "quandoUsar": "Venda de bem usado que não é o produto da empresa.",
+      "quandoNaoUsar": "Venda dos produtos normais do negócio.",
+      "exemplo": "Empresa vende um carro usado por R$ 25.000,00.",
+      "observacao": "A baixa do bem no Ativo deve ser tratada junto com a Controladoria."
+    },
+    {
+      "codigo": "1.4.003",
+      "grupo": "Outras Receitas",
+      "titulo": "Reembolsos e Recuperação de Despesas",
+      "categoria": "Outras receitas",
+      "cor": "verde",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valores recebidos de volta por despesas que a empresa pagou.",
+      "quandoUsar": "Cliente ou terceiro reembolsa uma despesa paga pela empresa.",
+      "quandoNaoUsar": "Receita normal de vendas ou serviços.",
+      "exemplo": "Cliente reembolsa R$ 300 de frete pago pela empresa.",
+      "observacao": "Se o reembolso for da mesma despesa, avalie com a Controladoria se deve abater a despesa original."
+    },
+    {
+      "codigo": "2.1.001",
+      "grupo": "Custo de Mercadorias",
+      "titulo": "CMV — Custo da Mercadoria Vendida",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "comercio"
+      ],
+      "definicao": "Quanto custou o produto que foi vendido no período (preço de compra).",
+      "quandoUsar": "No fechamento do período, para apurar o custo dos itens vendidos.",
+      "quandoNaoUsar": "Para lançar a compra em si (use Compras de Produtos para Revenda).",
+      "exemplo": "Camisa comprada por R$ 40 e vendida por R$ 89,90: R$ 40 vão para o CMV.",
+      "observacao": "Exige controle de estoque. Veja o Guia de CMV."
+    },
+    {
+      "codigo": "2.1.002",
+      "grupo": "Custo de Mercadorias",
+      "titulo": "Compras de Produtos para Revenda",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "comercio"
+      ],
+      "definicao": "Valor pago a fornecedores na compra de produtos para revender.",
+      "quandoUsar": "Nota fiscal de compra de mercadoria destinada à revenda.",
+      "quandoNaoUsar": "Itens de uso interno, como material de escritório.",
+      "exemplo": "Loja compra 50 camisas por R$ 2.000,00.",
+      "observacao": "Compra grande vira estoque; o custo vai para o resultado conforme as vendas."
+    },
+    {
+      "codigo": "2.1.003",
+      "grupo": "Custo de Mercadorias",
+      "titulo": "Fretes sobre Compras",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "comercio",
+        "industria"
+      ],
+      "definicao": "Frete pago para receber as mercadorias ou matérias-primas compradas.",
+      "quandoUsar": "Frete da compra de produtos para revenda ou de insumos.",
+      "quandoNaoUsar": "Frete para entregar ao cliente (use Fretes sobre Vendas).",
+      "exemplo": "Frete de R$ 180 para receber um lote de mercadorias.",
+      "observacao": "Pode ser somado ao custo da compra, conforme orientação da Controladoria."
+    },
+    {
+      "codigo": "2.1.004",
+      "grupo": "Custo de Mercadorias",
+      "titulo": "Devoluções de Compras",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "comercio",
+        "industria"
+      ],
+      "definicao": "Valor das mercadorias que a empresa devolveu ao fornecedor.",
+      "quandoUsar": "Devolução de produto com defeito ou enviado errado.",
+      "quandoNaoUsar": "Devolução de venda feita por cliente.",
+      "exemplo": "Empresa devolve 10 camisetas de R$ 25 e recebe R$ 250 de volta.",
+      "observacao": "Reduz o custo das compras."
+    },
+    {
+      "codigo": "2.1.005",
+      "grupo": "Custo de Mercadorias",
+      "titulo": "Perdas e Quebras de Estoque",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "comercio",
+        "industria"
+      ],
+      "definicao": "Valor de produtos perdidos, quebrados, vencidos ou furtados.",
+      "quandoUsar": "Descarte ou perda comprovada de mercadoria em estoque.",
+      "quandoNaoUsar": "Produto vendido normalmente.",
+      "exemplo": "5 camisetas manchadas descartadas: R$ 125,00.",
+      "observacao": "Registrar a perda separada permite agir sobre o problema em vez de escondê-lo no custo."
+    },
+    {
+      "codigo": "2.2.001",
+      "grupo": "Custo de Produção",
+      "titulo": "Matéria-Prima e Insumos",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Materiais que entram direto na fabricação do produto.",
+      "quandoUsar": "Compra de material que vira parte do produto final.",
+      "quandoNaoUsar": "Material de limpeza, manutenção ou escritório.",
+      "exemplo": "Marcenaria compra madeira e verniz.",
+      "observacao": "Compras grandes devem ser controladas por estoque."
+    },
+    {
+      "codigo": "2.2.002",
+      "grupo": "Custo de Produção",
+      "titulo": "Embalagens do Produto",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Embalagens que acompanham o produto fabricado.",
+      "quandoUsar": "Caixas, rótulos e sacos usados no produto final.",
+      "quandoNaoUsar": "Embalagens só para transporte ao cliente (use Embalagens para Envio).",
+      "exemplo": "Rótulos e caixas de uma linha de cosméticos.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "2.2.003",
+      "grupo": "Custo de Produção",
+      "titulo": "Mão de Obra Direta — Salários",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Salários de quem trabalha direto na produção.",
+      "quandoUsar": "Salário de operadores e montadores.",
+      "quandoNaoUsar": "Equipe administrativa, comercial ou de limpeza.",
+      "exemplo": "Salário do marceneiro que monta os móveis.",
+      "observacao": "Quem divide tempo entre produção e escritório pode ter o custo rateado."
+    },
+    {
+      "codigo": "2.2.004",
+      "grupo": "Custo de Produção",
+      "titulo": "Mão de Obra Direta — Encargos e Benefícios",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "INSS, FGTS, férias, 13º e benefícios da equipe de produção.",
+      "quandoUsar": "Encargos e benefícios de quem trabalha na produção.",
+      "quandoNaoUsar": "Encargos da equipe administrativa (use Despesas com Pessoal).",
+      "exemplo": "FGTS e vale-refeição dos operadores da linha.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "2.2.005",
+      "grupo": "Custo de Produção",
+      "titulo": "Energia Elétrica da Fábrica",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Conta de energia do local de produção.",
+      "quandoUsar": "Energia consumida pela fábrica ou galpão produtivo.",
+      "quandoNaoUsar": "Energia do escritório (use Energia Elétrica em Ocupação e Utilidades).",
+      "exemplo": "Conta de luz do galpão: R$ 2.400,00.",
+      "observacao": "Se fábrica e escritório dividem o medidor, a conta pode ser rateada."
+    },
+    {
+      "codigo": "2.2.006",
+      "grupo": "Custo de Produção",
+      "titulo": "Manutenção de Máquinas e Equipamentos",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Conserto e manutenção das máquinas de produção.",
+      "quandoUsar": "Revisão e reparo de equipamentos produtivos.",
+      "quandoNaoUsar": "Manutenção do prédio ou do escritório.",
+      "exemplo": "Troca de peças da máquina de corte: R$ 900,00.",
+      "observacao": "Melhoria que aumenta a vida útil da máquina pode ser investimento; consulte a Controladoria."
+    },
+    {
+      "codigo": "2.2.007",
+      "grupo": "Custo de Produção",
+      "titulo": "Serviços de Industrialização por Terceiros",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Valor pago a terceiros para fazerem parte da produção.",
+      "quandoUsar": "Serviço terceirizado ligado direto ao produto.",
+      "quandoNaoUsar": "Serviços de apoio, como limpeza ou contabilidade.",
+      "exemplo": "Pagamento a uma oficina que faz o acabamento das peças.",
+      "observacao": "Guarde a nota fiscal do terceiro."
+    },
+    {
+      "codigo": "2.2.008",
+      "grupo": "Custo de Produção",
+      "titulo": "Depreciação de Máquinas e Equipamentos",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Desgaste das máquinas ao longo do tempo (não sai dinheiro do caixa).",
+      "quandoUsar": "Todo mês, diluindo o valor do bem pela vida útil.",
+      "quandoNaoUsar": "Compra da máquina em si (use Máquinas e Equipamentos no Ativo).",
+      "exemplo": "Máquina de R$ 24.000 com 10 anos de vida útil: R$ 200 por mês.",
+      "observacao": "Normalmente calculada pela Controladoria."
+    },
+    {
+      "codigo": "2.2.009",
+      "grupo": "Custo de Produção",
+      "titulo": "Perdas e Refugo de Produção",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Material perdido ou produto que saiu com defeito na fábrica.",
+      "quandoUsar": "Sobras e peças descartadas no processo produtivo.",
+      "quandoNaoUsar": "Perda de produto já acabado no estoque (use Perdas e Quebras de Estoque).",
+      "exemplo": "Chapas de madeira cortadas errado e descartadas.",
+      "observacao": "Acompanhar o refugo ajuda a reduzir desperdício."
+    },
+    {
+      "codigo": "2.3.001",
+      "grupo": "Custo de Serviços",
+      "titulo": "Salários da Equipe de Projetos",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "servicos"
+      ],
+      "definicao": "Salários de quem executa direto o serviço vendido.",
+      "quandoUsar": "Consultores, analistas e técnicos que entregam o serviço.",
+      "quandoNaoUsar": "Equipe administrativa ou comercial.",
+      "exemplo": "Salário do consultor alocado no projeto do cliente.",
+      "observacao": "Ajuda a calcular a margem real por projeto."
+    },
+    {
+      "codigo": "2.3.002",
+      "grupo": "Custo de Serviços",
+      "titulo": "Encargos e Benefícios da Equipe de Projetos",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "servicos"
+      ],
+      "definicao": "INSS, FGTS, férias, 13º e benefícios de quem executa os projetos.",
+      "quandoUsar": "Encargos e benefícios da equipe que entrega o serviço.",
+      "quandoNaoUsar": "Encargos da equipe administrativa (use Despesas com Pessoal).",
+      "exemplo": "FGTS e vale-refeição dos consultores.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "2.3.003",
+      "grupo": "Custo de Serviços",
+      "titulo": "Subcontratação de Serviços",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "servicos"
+      ],
+      "definicao": "Valor pago a terceiros que executam parte do serviço vendido.",
+      "quandoUsar": "Freelancer ou outra empresa que entrega parte do projeto.",
+      "quandoNaoUsar": "Serviços de apoio interno, como a contabilidade da própria empresa.",
+      "exemplo": "Agência contrata um freelancer de vídeo para um projeto.",
+      "observacao": "Guarde nota fiscal ou recibo do terceiro."
+    },
+    {
+      "codigo": "2.3.004",
+      "grupo": "Custo de Serviços",
+      "titulo": "Viagens e Despesas de Projeto",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "servicos"
+      ],
+      "definicao": "Gastos de viagem e deslocamento feitos para atender um projeto.",
+      "quandoUsar": "Passagem, hospedagem e alimentação em visita ao cliente.",
+      "quandoNaoUsar": "Viagens administrativas ou comerciais gerais.",
+      "exemplo": "Consultor viaja para atender o cliente: R$ 1.100,00.",
+      "observacao": "Se o cliente reembolsa, avise a Controladoria."
+    },
+    {
+      "codigo": "2.3.005",
+      "grupo": "Custo de Serviços",
+      "titulo": "Ferramentas e Licenças Usadas nos Projetos",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "servicos"
+      ],
+      "definicao": "Softwares e licenças usados direto na entrega do serviço.",
+      "quandoUsar": "Licença comprada para um projeto específico.",
+      "quandoNaoUsar": "Softwares de uso geral da empresa (use Tecnologia e Sistemas).",
+      "exemplo": "Licença de software de design usada num projeto.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "2.4.001",
+      "grupo": "Custos Variáveis de Venda",
+      "titulo": "Comissões sobre Vendas",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Percentual pago a vendedores sobre o que foi vendido.",
+      "quandoUsar": "Comissão calculada sobre o valor vendido.",
+      "quandoNaoUsar": "Salário fixo do vendedor.",
+      "exemplo": "3% sobre venda de R$ 5.000,00: R$ 150,00.",
+      "observacao": "Lançar no mesmo período da venda ajuda a medir a margem real."
+    },
+    {
+      "codigo": "2.4.002",
+      "grupo": "Custos Variáveis de Venda",
+      "titulo": "Fretes sobre Vendas",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "comercio",
+        "industria"
+      ],
+      "definicao": "Frete pago para entregar o produto ao cliente.",
+      "quandoUsar": "Entrega ao cliente paga pela empresa.",
+      "quandoNaoUsar": "Frete de compras (use Fretes sobre Compras).",
+      "exemplo": "Frete de R$ 35 para enviar um pedido.",
+      "observacao": "Se o cliente paga o frete, não é custo da empresa."
+    },
+    {
+      "codigo": "2.4.003",
+      "grupo": "Custos Variáveis de Venda",
+      "titulo": "Embalagens para Envio",
+      "categoria": "Custo",
+      "cor": "amarelo",
+      "segmentos": [
+        "comercio",
+        "industria"
+      ],
+      "definicao": "Caixas e proteções usadas para enviar o produto.",
+      "quandoUsar": "Embalagem de transporte do pedido.",
+      "quandoNaoUsar": "Embalagem que faz parte do produto.",
+      "exemplo": "Caixas de papelão e fita para envio.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.1.001",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Salários e Ordenados",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Salários da equipe fora da produção ou da entrega direta do serviço.",
+      "quandoUsar": "Salário mensal de administrativo, financeiro, recepção, RH e limpeza.",
+      "quandoNaoUsar": "Salário da produção (indústria) ou da equipe de projetos (serviços).",
+      "exemplo": "Salário da recepcionista: R$ 1.800,00.",
+      "observacao": "Lance o valor bruto; descontos entram nas obrigações trabalhistas."
+    },
+    {
+      "codigo": "3.1.002",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Horas Extras e Adicionais",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valores pagos além do salário: horas extras, adicional noturno, comissão fixa.",
+      "quandoUsar": "Horas extras e adicionais da equipe administrativa.",
+      "quandoNaoUsar": "Comissão de vendas (use Comissões sobre Vendas).",
+      "exemplo": "Auxiliar faz 10 horas extras no fechamento: R$ 180,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.1.003",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "13º Salário",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Pagamento do décimo terceiro salário da equipe.",
+      "quandoUsar": "Pagamento das parcelas do 13º.",
+      "quandoNaoUsar": "Provisão mensal (use Provisão de Férias e 13º Salário).",
+      "exemplo": "Pagamento da 1ª parcela em novembro.",
+      "observacao": "Provisionar todo mês evita um baque no caixa em dezembro."
+    },
+    {
+      "codigo": "3.1.004",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Férias",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Pagamento de férias da equipe, incluindo o terço constitucional.",
+      "quandoUsar": "Pagamento das férias dos funcionários.",
+      "quandoNaoUsar": "Provisão mensal (use Provisão de Férias e 13º Salário).",
+      "exemplo": "Funcionária sai de férias: salário e 1/3.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.1.005",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "INSS (parte da empresa)",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Contribuição previdenciária paga pela empresa sobre a folha.",
+      "quandoUsar": "Guia de INSS patronal quando a empresa não está no Simples.",
+      "quandoNaoUsar": "INSS descontado do funcionário (é dele, não é despesa).",
+      "exemplo": "INSS patronal do mês: R$ 3.200,00.",
+      "observacao": "No Simples Nacional, a contribuição já pode estar dentro do DAS; confirme com a Controladoria."
+    },
+    {
+      "codigo": "3.1.006",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "FGTS",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Depósito mensal de FGTS dos funcionários.",
+      "quandoUsar": "Guia mensal do FGTS.",
+      "quandoNaoUsar": "Multa do FGTS na demissão (use Rescisões).",
+      "exemplo": "FGTS do mês: R$ 1.100,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.1.007",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Vale Refeição",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Alimentação paga aos funcionários (vale-refeição, vale-alimentação).",
+      "quandoUsar": "Cartão ou ticket de refeição e alimentação.",
+      "quandoNaoUsar": "Confraternizações (use Alimentação e Confraternizações).",
+      "exemplo": "Crédito mensal de vale-refeição: R$ 1.540,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.1.008",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Vale Transporte",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Auxílio de transporte pago aos funcionários.",
+      "quandoUsar": "Compra do vale ou reembolso de transporte.",
+      "quandoNaoUsar": "Combustível de veículo da empresa.",
+      "exemplo": "Vale-transporte do mês: R$ 620,00.",
+      "observacao": "A parte descontada do funcionário reduz essa despesa."
+    },
+    {
+      "codigo": "3.1.009",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Plano de Saúde e Outros Benefícios",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Benefícios como plano de saúde, odontológico e seguro de vida.",
+      "quandoUsar": "Mensalidade de planos e benefícios dos funcionários.",
+      "quandoNaoUsar": "Vale-refeição e vale-transporte (têm conta própria).",
+      "exemplo": "Plano de saúde da equipe: R$ 2.300,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.1.010",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Rescisões",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valores pagos quando um funcionário é desligado.",
+      "quandoUsar": "Verbas rescisórias, aviso prévio e multa do FGTS.",
+      "quandoNaoUsar": "Salários normais do mês.",
+      "exemplo": "Rescisão de um funcionário: R$ 5.400,00.",
+      "observacao": "Rescisão pesa no caixa; avise a Controladoria antes de desligar."
+    },
+    {
+      "codigo": "3.1.011",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Pró-labore",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Remuneração dos sócios pelo trabalho na empresa.",
+      "quandoUsar": "Retirada mensal fixa do sócio.",
+      "quandoNaoUsar": "Distribuição de lucros.",
+      "exemplo": "Sócio retira R$ 3.000,00 fixos por mês.",
+      "observacao": "Tem tributação diferente da distribuição de lucros."
+    },
+    {
+      "codigo": "3.1.012",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "INSS sobre Pró-labore",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Contribuição previdenciária sobre a retirada dos sócios.",
+      "quandoUsar": "Guia de INSS do pró-labore.",
+      "quandoNaoUsar": "INSS dos funcionários.",
+      "exemplo": "INSS de 11% sobre R$ 3.000,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.1.013",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Serviços de Autônomos (RPA)",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Pagamento a pessoas físicas que prestam serviço sem vínculo de emprego.",
+      "quandoUsar": "Recibo de pagamento a autônomo.",
+      "quandoNaoUsar": "Serviço pago a empresa com nota fiscal (use Serviços de Terceiros).",
+      "exemplo": "Eletricista autônomo contratado por R$ 400,00.",
+      "observacao": "Guarde o recibo e confirme os impostos com a Controladoria."
+    },
+    {
+      "codigo": "3.1.014",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Treinamentos e Capacitação",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Cursos e treinamentos da equipe.",
+      "quandoUsar": "Inscrição em curso ou treinamento.",
+      "quandoNaoUsar": "Material de escritório.",
+      "exemplo": "Curso de Excel para a equipe: R$ 600,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.1.015",
+      "grupo": "Despesas com Pessoal",
+      "titulo": "Uniformes e EPIs",
+      "categoria": "Despesa com pessoal",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Uniformes e equipamentos de proteção individual.",
+      "quandoUsar": "Compra de uniformes e EPIs para os funcionários.",
+      "quandoNaoUsar": "Material de limpeza.",
+      "exemplo": "Uniformes novos para a equipe: R$ 850,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.2.001",
+      "grupo": "Ocupação e Utilidades",
+      "titulo": "Aluguel",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valor pago pelo uso do imóvel onde a empresa opera.",
+      "quandoUsar": "Aluguel de loja, escritório ou galpão.",
+      "quandoNaoUsar": "Condomínio e IPTU cobrados à parte (têm conta própria).",
+      "exemplo": "Loja paga R$ 2.500,00 todo dia 10.",
+      "observacao": "Imóvel dividido entre fábrica e escritório pode ser rateado."
+    },
+    {
+      "codigo": "3.2.002",
+      "grupo": "Ocupação e Utilidades",
+      "titulo": "Condomínio",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Taxa de condomínio do imóvel.",
+      "quandoUsar": "Boleto de condomínio da sala ou loja.",
+      "quandoNaoUsar": "Aluguel.",
+      "exemplo": "Condomínio de R$ 480,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.2.003",
+      "grupo": "Ocupação e Utilidades",
+      "titulo": "IPTU",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Imposto sobre o imóvel onde a empresa opera.",
+      "quandoUsar": "Pagamento do IPTU quando ele é responsabilidade da empresa.",
+      "quandoNaoUsar": "IPTU de imóvel que não é usado pela empresa.",
+      "exemplo": "IPTU anual de R$ 1.200,00.",
+      "observacao": "Se paga em parcela única, a Controladoria pode distribuir ao longo do ano."
+    },
+    {
+      "codigo": "3.2.004",
+      "grupo": "Ocupação e Utilidades",
+      "titulo": "Energia Elétrica",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Conta de luz do escritório ou da loja.",
+      "quandoUsar": "Conta mensal de energia do espaço administrativo ou comercial.",
+      "quandoNaoUsar": "Energia da fábrica (use Energia Elétrica da Fábrica).",
+      "exemplo": "Conta de luz do escritório: R$ 380,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.2.005",
+      "grupo": "Ocupação e Utilidades",
+      "titulo": "Água e Esgoto",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Conta de água e esgoto do escritório ou da loja.",
+      "quandoUsar": "Conta mensal de água.",
+      "quandoNaoUsar": "Água usada na produção (considere custo de produção).",
+      "exemplo": "Conta de água: R$ 120,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.2.006",
+      "grupo": "Ocupação e Utilidades",
+      "titulo": "Internet e Telefone",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Internet, telefone fixo e celular da empresa.",
+      "quandoUsar": "Mensalidades de internet e telefonia.",
+      "quandoNaoUsar": "Aparelho celular comprado (é um bem do Ativo).",
+      "exemplo": "Plano de internet: R$ 199,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.2.007",
+      "grupo": "Ocupação e Utilidades",
+      "titulo": "Limpeza e Conservação",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Serviço de limpeza e conservação do espaço.",
+      "quandoUsar": "Diarista, empresa de limpeza e jardinagem.",
+      "quandoNaoUsar": "Material de limpeza (use Material de Limpeza e Copa).",
+      "exemplo": "Empresa de limpeza: R$ 900,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.2.008",
+      "grupo": "Ocupação e Utilidades",
+      "titulo": "Segurança e Monitoramento",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Alarme, câmeras e vigilância.",
+      "quandoUsar": "Mensalidade de monitoramento e vigilância.",
+      "quandoNaoUsar": "Seguro (use Seguros).",
+      "exemplo": "Monitoramento de alarme: R$ 150,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.2.009",
+      "grupo": "Ocupação e Utilidades",
+      "titulo": "Manutenção e Reparos",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Conserto e manutenção do prédio e dos equipamentos administrativos.",
+      "quandoUsar": "Reparo de ar-condicionado, pintura, hidráulica.",
+      "quandoNaoUsar": "Manutenção das máquinas de produção (use Custo de Produção).",
+      "exemplo": "Conserto do ar-condicionado: R$ 350,00.",
+      "observacao": "Reforma grande pode ser tratada como investimento; consulte a Controladoria."
+    },
+    {
+      "codigo": "3.3.001",
+      "grupo": "Serviços de Terceiros",
+      "titulo": "Honorários Contábeis",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Mensalidade paga ao escritório de contabilidade.",
+      "quandoUsar": "Honorários mensais da contabilidade.",
+      "quandoNaoUsar": "Honorários da Controladoria (têm conta própria).",
+      "exemplo": "Contabilidade: R$ 800,00 por mês.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.3.002",
+      "grupo": "Serviços de Terceiros",
+      "titulo": "Honorários de Controladoria",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valor pago à Controladoria pelos serviços financeiros.",
+      "quandoUsar": "Mensalidade de serviços de controladoria.",
+      "quandoNaoUsar": "Honorários contábeis e advocatícios.",
+      "exemplo": "Mensalidade paga à Sattva Controladoria.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.3.003",
+      "grupo": "Serviços de Terceiros",
+      "titulo": "Honorários Advocatícios",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Pagamento a advogados e assessoria jurídica.",
+      "quandoUsar": "Honorários de contratos, defesas e consultas jurídicas.",
+      "quandoNaoUsar": "Acordos e condenações (use Despesas Judiciais e Acordos).",
+      "exemplo": "Advogado revisa um contrato: R$ 1.500,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.3.004",
+      "grupo": "Serviços de Terceiros",
+      "titulo": "Serviços Técnicos Especializados",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Serviços profissionais contratados pontualmente, como engenharia, design ou perícias.",
+      "quandoUsar": "Serviço especializado de apoio à empresa.",
+      "quandoNaoUsar": "Serviço que faz parte do que a empresa vende (use Subcontratação de Serviços).",
+      "exemplo": "Laudo técnico do prédio: R$ 700,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.3.005",
+      "grupo": "Serviços de Terceiros",
+      "titulo": "Serviços de TI e Suporte",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Suporte técnico e manutenção de computadores e redes.",
+      "quandoUsar": "Empresa de TI, técnico de informática.",
+      "quandoNaoUsar": "Assinaturas de software (use Tecnologia e Sistemas).",
+      "exemplo": "Suporte de TI mensal: R$ 350,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.3.006",
+      "grupo": "Serviços de Terceiros",
+      "titulo": "Segurança e Medicina do Trabalho",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Exames, laudos e programas de saúde e segurança dos funcionários.",
+      "quandoUsar": "Exames admissionais, periódicos e laudos obrigatórios.",
+      "quandoNaoUsar": "Plano de saúde (use Plano de Saúde e Outros Benefícios).",
+      "exemplo": "Exames admissionais de 2 funcionários: R$ 220,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.4.001",
+      "grupo": "Tecnologia e Sistemas",
+      "titulo": "ERP e Sistemas de Gestão",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Mensalidade do sistema usado para gerir a empresa.",
+      "quandoUsar": "ERP, sistemas de vendas e financeiro.",
+      "quandoNaoUsar": "Computador onde o sistema roda (é um bem do Ativo).",
+      "exemplo": "Mensalidade do ERP: R$ 190,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.4.002",
+      "grupo": "Tecnologia e Sistemas",
+      "titulo": "Assinaturas de Softwares e Aplicativos",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Mensalidades de ferramentas digitais.",
+      "quandoUsar": "Pacote de escritório, design, e-mail corporativo.",
+      "quandoNaoUsar": "Licença usada direto num projeto de cliente (use Ferramentas e Licenças dos Projetos).",
+      "exemplo": "Assinatura de e-mail e ferramentas: R$ 150,00.",
+      "observacao": "Revise as assinaturas de tempos em tempos para não pagar por algo esquecido."
+    },
+    {
+      "codigo": "3.4.003",
+      "grupo": "Tecnologia e Sistemas",
+      "titulo": "Hospedagem, Domínio e Nuvem",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Site, domínio e armazenamento em nuvem.",
+      "quandoUsar": "Hospedagem do site, domínio e backup em nuvem.",
+      "quandoNaoUsar": "Anúncios na internet (use Anúncios e Mídia Paga).",
+      "exemplo": "Hospedagem do site: R$ 60,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.5.001",
+      "grupo": "Despesas Administrativas Gerais",
+      "titulo": "Material de Escritório",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Papel, canetas, toner e itens de escritório.",
+      "quandoUsar": "Compras de uso interno do escritório.",
+      "quandoNaoUsar": "Material usado direto no produto.",
+      "exemplo": "Papel e toner: R$ 230,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.5.002",
+      "grupo": "Despesas Administrativas Gerais",
+      "titulo": "Material de Limpeza e Copa",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Produtos de limpeza, café, água e itens de copa.",
+      "quandoUsar": "Compras de limpeza e copa.",
+      "quandoNaoUsar": "Serviço de limpeza (use Limpeza e Conservação).",
+      "exemplo": "Café, água e detergente: R$ 180,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.5.003",
+      "grupo": "Despesas Administrativas Gerais",
+      "titulo": "Correios e Motoboy",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Envios de documentos e entregas administrativas.",
+      "quandoUsar": "Correios, motoboy e malote.",
+      "quandoNaoUsar": "Frete de venda (use Fretes sobre Vendas).",
+      "exemplo": "Motoboy para levar documentos: R$ 40,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.5.004",
+      "grupo": "Despesas Administrativas Gerais",
+      "titulo": "Seguros",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Seguros da empresa (patrimônio, veículo, responsabilidade).",
+      "quandoUsar": "Pagamento de apólices e parcelas.",
+      "quandoNaoUsar": "Seguro de vida dos funcionários (use Plano de Saúde e Outros Benefícios).",
+      "exemplo": "Seguro do estabelecimento: R$ 1.200,00 por ano.",
+      "observacao": "Pagamento anual pode ser diluído em 12 meses pela Controladoria."
+    },
+    {
+      "codigo": "3.5.005",
+      "grupo": "Despesas Administrativas Gerais",
+      "titulo": "Viagens e Hospedagens",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Passagens e hospedagens de viagens da empresa.",
+      "quandoUsar": "Viagens administrativas e comerciais.",
+      "quandoNaoUsar": "Viagens para atender projetos (use Viagens e Despesas de Projeto).",
+      "exemplo": "Hotel em viagem de negócios: R$ 480,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.5.006",
+      "grupo": "Despesas Administrativas Gerais",
+      "titulo": "Alimentação e Confraternizações",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Refeições em reuniões e eventos internos.",
+      "quandoUsar": "Lanche de reunião, confraternização.",
+      "quandoNaoUsar": "Vale-refeição dos funcionários.",
+      "exemplo": "Almoço de fim de ano: R$ 900,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.5.007",
+      "grupo": "Despesas Administrativas Gerais",
+      "titulo": "Combustível e Deslocamento",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Combustível, pedágio, estacionamento e transporte por aplicativo a trabalho.",
+      "quandoUsar": "Visitas a clientes e deslocamentos da empresa.",
+      "quandoNaoUsar": "Frete de compra ou de venda.",
+      "exemplo": "Abastecimento do carro usado em visitas: R$ 150,00.",
+      "observacao": "Guarde os comprovantes."
+    },
+    {
+      "codigo": "3.5.008",
+      "grupo": "Despesas Administrativas Gerais",
+      "titulo": "Doações e Patrocínios",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Doações e patrocínios sem retorno direto de vendas.",
+      "quandoUsar": "Ajuda a entidades e eventos.",
+      "quandoNaoUsar": "Publicidade paga (use Despesas Comerciais).",
+      "exemplo": "Doação a uma entidade local: R$ 300,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.5.009",
+      "grupo": "Despesas Administrativas Gerais",
+      "titulo": "Depreciação de Móveis, Equipamentos e Veículos",
+      "categoria": "Despesa administrativa",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Desgaste dos bens administrativos ao longo do tempo (não sai dinheiro do caixa).",
+      "quandoUsar": "Todo mês, diluindo o valor do bem pela vida útil.",
+      "quandoNaoUsar": "Compra do bem (use o grupo Imobilizado).",
+      "exemplo": "Computador de R$ 6.000 com 5 anos: R$ 100 por mês.",
+      "observacao": "Normalmente calculada pela Controladoria."
+    },
+    {
+      "codigo": "3.6.001",
+      "grupo": "Despesas Comerciais",
+      "titulo": "Anúncios e Mídia Paga",
+      "categoria": "Despesa comercial",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Anúncios em redes sociais, buscadores e mídia.",
+      "quandoUsar": "Verba de anúncios online e offline.",
+      "quandoNaoUsar": "Comissão de vendedores.",
+      "exemplo": "Anúncios no Instagram: R$ 600,00.",
+      "observacao": "Separar por canal ajuda a ver o retorno."
+    },
+    {
+      "codigo": "3.6.002",
+      "grupo": "Despesas Comerciais",
+      "titulo": "Material Gráfico e Brindes",
+      "categoria": "Despesa comercial",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Panfletos, cartões, banners e brindes.",
+      "quandoUsar": "Impressos e brindes para divulgação.",
+      "quandoNaoUsar": "Embalagens do produto.",
+      "exemplo": "Pix para a gráfica que imprimiu panfletos: R$ 480,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.6.003",
+      "grupo": "Despesas Comerciais",
+      "titulo": "Redes Sociais e Produção de Conteúdo",
+      "categoria": "Despesa comercial",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Criação de fotos, vídeos e textos para divulgação.",
+      "quandoUsar": "Fotógrafo, designer e produtor de conteúdo.",
+      "quandoNaoUsar": "Anúncios pagos.",
+      "exemplo": "Ensaio fotográfico de produtos: R$ 700,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.6.004",
+      "grupo": "Despesas Comerciais",
+      "titulo": "Eventos e Feiras",
+      "categoria": "Despesa comercial",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Participação em feiras e eventos para vender ou divulgar.",
+      "quandoUsar": "Estande, inscrição e montagem em feiras.",
+      "quandoNaoUsar": "Confraternização interna.",
+      "exemplo": "Estande em uma feira do setor: R$ 2.500,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.6.005",
+      "grupo": "Despesas Comerciais",
+      "titulo": "Agência de Marketing",
+      "categoria": "Despesa comercial",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Mensalidade de agência que cuida do marketing da empresa.",
+      "quandoUsar": "Honorários da agência.",
+      "quandoNaoUsar": "Anúncios (a verba de mídia tem conta própria).",
+      "exemplo": "Agência de marketing: R$ 1.800,00 por mês.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.7.001",
+      "grupo": "Impostos e Taxas",
+      "titulo": "Simples Nacional (DAS)",
+      "categoria": "Despesa (tributo)",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Guia única de impostos das empresas do Simples Nacional.",
+      "quandoUsar": "Pagamento mensal do DAS.",
+      "quandoNaoUsar": "Se a empresa não é do Simples, use as contas de ICMS, ISS, PIS/COFINS e IRPJ/CSLL.",
+      "exemplo": "DAS do mês: R$ 620,00.",
+      "observacao": "O regime tributário define quais contas valem para a sua empresa."
+    },
+    {
+      "codigo": "3.7.002",
+      "grupo": "Impostos e Taxas",
+      "titulo": "ICMS",
+      "categoria": "Despesa (tributo)",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "industria"
+      ],
+      "definicao": "Imposto estadual sobre vendas de mercadorias.",
+      "quandoUsar": "Pagamento do ICMS fora do Simples.",
+      "quandoNaoUsar": "Empresas do Simples (o ICMS já está no DAS).",
+      "exemplo": "ICMS a recolher do mês: R$ 1.900,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.7.003",
+      "grupo": "Impostos e Taxas",
+      "titulo": "ISS",
+      "categoria": "Despesa (tributo)",
+      "cor": "vermelho",
+      "segmentos": [
+        "servicos"
+      ],
+      "definicao": "Imposto municipal sobre serviços.",
+      "quandoUsar": "Pagamento do ISS fora do Simples.",
+      "quandoNaoUsar": "Empresas do Simples (o ISS já está no DAS).",
+      "exemplo": "ISS do mês: R$ 450,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.7.004",
+      "grupo": "Impostos e Taxas",
+      "titulo": "PIS e COFINS",
+      "categoria": "Despesa (tributo)",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Contribuições federais sobre o faturamento.",
+      "quandoUsar": "Guia de PIS e COFINS fora do Simples.",
+      "quandoNaoUsar": "Empresas do Simples.",
+      "exemplo": "PIS e COFINS do mês: R$ 700,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.7.005",
+      "grupo": "Impostos e Taxas",
+      "titulo": "IRPJ e CSLL",
+      "categoria": "Despesa (tributo)",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Imposto de renda e contribuição social sobre o lucro da empresa.",
+      "quandoUsar": "Guias de IRPJ e CSLL (Lucro Presumido ou Real).",
+      "quandoNaoUsar": "Imposto de renda dos sócios (é da pessoa física).",
+      "exemplo": "IRPJ e CSLL do trimestre: R$ 2.100,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.7.006",
+      "grupo": "Impostos e Taxas",
+      "titulo": "Taxas, Licenças e Alvarás",
+      "categoria": "Despesa (tributo)",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Taxas pagas a órgãos públicos para a empresa funcionar.",
+      "quandoUsar": "Alvará, conselhos, certidões e licenças.",
+      "quandoNaoUsar": "Impostos sobre vendas.",
+      "exemplo": "Renovação do alvará: R$ 280,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.8.001",
+      "grupo": "Despesas Financeiras",
+      "titulo": "Tarifas Bancárias",
+      "categoria": "Despesa financeira",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Tarifas cobradas pelo banco.",
+      "quandoUsar": "Manutenção de conta, TED, boletos, extratos.",
+      "quandoNaoUsar": "Juros e multas (têm conta própria).",
+      "exemplo": "Tarifa de manutenção: R$ 35,00.",
+      "observacao": "Confira o extrato linha a linha: tarifas pequenas passam despercebidas."
+    },
+    {
+      "codigo": "3.8.002",
+      "grupo": "Despesas Financeiras",
+      "titulo": "Taxas de Cartão e Maquininha",
+      "categoria": "Despesa financeira",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Taxas cobradas pela operadora do cartão sobre as vendas.",
+      "quandoUsar": "Taxa de maquininha, aluguel da máquina, taxa de marketplace.",
+      "quandoNaoUsar": "Tarifas do banco.",
+      "exemplo": "Taxa de 2,5% sobre vendas no cartão.",
+      "observacao": "Lançar o valor bruto da venda e a taxa separadamente mantém a receita correta."
+    },
+    {
+      "codigo": "3.8.003",
+      "grupo": "Despesas Financeiras",
+      "titulo": "Juros Pagos sobre Empréstimos",
+      "categoria": "Despesa financeira",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Juros embutidos nas parcelas de empréstimos e financiamentos.",
+      "quandoUsar": "A parte de juros da parcela.",
+      "quandoNaoUsar": "O valor principal do empréstimo (vai no Passivo).",
+      "exemplo": "Parcela de R$ 1.000 com R$ 140 de juros: R$ 140 aqui.",
+      "observacao": "IOF do empréstimo vai na conta IOF."
+    },
+    {
+      "codigo": "3.8.004",
+      "grupo": "Despesas Financeiras",
+      "titulo": "Juros e Multas por Atraso",
+      "categoria": "Despesa financeira",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valor pago a mais por pagar uma conta depois do vencimento.",
+      "quandoUsar": "Multa e juros de boleto atrasado.",
+      "quandoNaoUsar": "Juros de empréstimo (use Juros Pagos sobre Empréstimos).",
+      "exemplo": "Boleto de R$ 500 pago com R$ 12 de multa e juros: R$ 12 aqui.",
+      "observacao": "Se esta conta cresce, a empresa está pagando atrasado com frequência."
+    },
+    {
+      "codigo": "3.8.005",
+      "grupo": "Despesas Financeiras",
+      "titulo": "IOF",
+      "categoria": "Despesa financeira",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Imposto sobre operações financeiras.",
+      "quandoUsar": "IOF cobrado em empréstimos, câmbio e outras operações.",
+      "quandoNaoUsar": "IOF já descontado em rendimento líquido de aplicação.",
+      "exemplo": "IOF de R$ 85 em um empréstimo.",
+      "observacao": "Aparece automaticamente no extrato."
+    },
+    {
+      "codigo": "3.8.006",
+      "grupo": "Despesas Financeiras",
+      "titulo": "Custo de Antecipação de Recebíveis",
+      "categoria": "Despesa financeira",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Desconto pago para receber antes uma venda a prazo ou no cartão.",
+      "quandoUsar": "Taxa de antecipação de recebíveis.",
+      "quandoNaoUsar": "Taxa normal da maquininha.",
+      "exemplo": "Antecipou R$ 10.000 e recebeu R$ 9.700: R$ 300 aqui.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.9.001",
+      "grupo": "Perdas e Despesas Eventuais",
+      "titulo": "Perdas com Clientes Inadimplentes",
+      "categoria": "Despesa eventual",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valores de vendas que o cliente não pagou e não vai pagar.",
+      "quandoUsar": "Dívida de cliente considerada perdida.",
+      "quandoNaoUsar": "Cliente que apenas atrasou.",
+      "exemplo": "Cliente não paga uma venda de R$ 2.000.",
+      "observacao": "Confirme com a Controladoria antes de dar o valor como perdido."
+    },
+    {
+      "codigo": "3.9.002",
+      "grupo": "Perdas e Despesas Eventuais",
+      "titulo": "Multas de Trânsito e Administrativas",
+      "categoria": "Despesa eventual",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Multas que não são juros de atraso.",
+      "quandoUsar": "Multas de veículos e multas de órgãos públicos.",
+      "quandoNaoUsar": "Juros e multa por pagamento em atraso.",
+      "exemplo": "Multa de trânsito do veículo da empresa: R$ 130,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "3.9.003",
+      "grupo": "Perdas e Despesas Eventuais",
+      "titulo": "Despesas Judiciais e Acordos",
+      "categoria": "Despesa eventual",
+      "cor": "vermelho",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Custas e acordos de processos.",
+      "quandoUsar": "Custas, condenações e acordos judiciais.",
+      "quandoNaoUsar": "Honorários do advogado (use Honorários Advocatícios).",
+      "exemplo": "Acordo trabalhista de R$ 4.000,00.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "4.1.001",
+      "grupo": "Caixa e Bancos",
+      "titulo": "Caixa",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro em espécie guardado na empresa.",
+      "quandoUsar": "Entradas e saídas em dinheiro vivo.",
+      "quandoNaoUsar": "Dinheiro no banco.",
+      "exemplo": "Sangria de R$ 500 para o caixa da loja.",
+      "observacao": "O caixa físico deve bater com o contado."
+    },
+    {
+      "codigo": "4.1.002",
+      "grupo": "Caixa e Bancos",
+      "titulo": "Banco — Conta Corrente",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro disponível nas contas bancárias.",
+      "quandoUsar": "Todo lançamento passa, de um lado, por esta conta.",
+      "quandoNaoUsar": "Não aparece na DRE, apenas no saldo.",
+      "exemplo": "Saldo do banco bate com o lançado aqui no fim do mês.",
+      "observacao": "Uma conta para cada banco ajuda na conciliação."
+    },
+    {
+      "codigo": "4.1.003",
+      "grupo": "Caixa e Bancos",
+      "titulo": "Transferência entre Contas",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro que muda de conta bancária da própria empresa.",
+      "quandoUsar": "Saída na conta de origem e entrada na de destino.",
+      "quandoNaoUsar": "Transferência para outra empresa ou sócio.",
+      "exemplo": "Transfere R$ 5.000 da conta A para a conta B.",
+      "observacao": "Ao somar tudo que está nessa categoria, o saldo deve ser zero."
+    },
+    {
+      "codigo": "4.2.001",
+      "grupo": "Aplicações Financeiras",
+      "titulo": "Aplicações Financeiras",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro que saiu da conta corrente para uma aplicação do banco.",
+      "quandoUsar": "Aplicação em CDB, fundo ou aplicação automática.",
+      "quandoNaoUsar": "Rendimentos (use Rendimento de Aplicação).",
+      "exemplo": "Aplica R$ 10.000 no CDB.",
+      "observacao": "Aplicação não é despesa."
+    },
+    {
+      "codigo": "4.2.002",
+      "grupo": "Aplicações Financeiras",
+      "titulo": "Resgate de Aplicações",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro que volta da aplicação para a conta corrente.",
+      "quandoUsar": "Resgate do valor aplicado.",
+      "quandoNaoUsar": "Rendimento (use Rendimento de Aplicação).",
+      "exemplo": "Resgata R$ 10.000 do CDB.",
+      "observacao": "O resgate não é receita; só o rendimento é."
+    },
+    {
+      "codigo": "4.3.001",
+      "grupo": "Valores a Receber",
+      "titulo": "Clientes a Receber (Recebimento de Venda)",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valores de vendas a prazo que ainda não foram recebidos.",
+      "quandoUsar": "Venda a prazo e a baixa quando o cliente paga.",
+      "quandoNaoUsar": "Venda à vista.",
+      "exemplo": "Venda de R$ 2.000 para receber em 30 dias.",
+      "observacao": "Ao receber, a baixa não cria uma nova receita."
+    },
+    {
+      "codigo": "4.3.002",
+      "grupo": "Valores a Receber",
+      "titulo": "Adiantamentos a Fornecedores",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro pago antes de receber a mercadoria ou serviço.",
+      "quandoUsar": "Sinal ou adiantamento a fornecedor.",
+      "quandoNaoUsar": "Pagamento de compra já recebida.",
+      "exemplo": "Adianta R$ 1.000 em um pedido.",
+      "observacao": "Quando a mercadoria chegar, o adiantamento é baixado."
+    },
+    {
+      "codigo": "4.3.003",
+      "grupo": "Valores a Receber",
+      "titulo": "Adiantamentos a Funcionários",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valores adiantados aos funcionários, como vale ou adiantamento de salário.",
+      "quandoUsar": "Vale e adiantamento descontados depois.",
+      "quandoNaoUsar": "Salário normal.",
+      "exemplo": "Adianta R$ 300 a um funcionário.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "4.3.004",
+      "grupo": "Valores a Receber",
+      "titulo": "Empréstimos entre Empresas — Concedido",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro que a empresa emprestou a outra empresa do grupo.",
+      "quandoUsar": "Empresa que empresta: saída.",
+      "quandoNaoUsar": "Empréstimo recebido (use Empréstimos entre Empresas — Recebido).",
+      "exemplo": "Empresa A empresta R$ 20.000 à empresa B.",
+      "observacao": "Não é receita nem despesa."
+    },
+    {
+      "codigo": "4.4.001",
+      "grupo": "Estoques",
+      "titulo": "Estoque de Mercadorias",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio"
+      ],
+      "definicao": "Valor dos produtos guardados para revenda.",
+      "quandoUsar": "Contagem do estoque no fim do período.",
+      "quandoNaoUsar": "Produtos que já foram vendidos.",
+      "exemplo": "Estoque final de R$ 6.000 no mês.",
+      "observacao": "Base para calcular o CMV."
+    },
+    {
+      "codigo": "4.4.002",
+      "grupo": "Estoques",
+      "titulo": "Estoque de Matéria-Prima e Embalagens",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Valor dos insumos guardados para produzir.",
+      "quandoUsar": "Contagem de insumos no fim do período.",
+      "quandoNaoUsar": "Insumos já usados na produção.",
+      "exemplo": "Estoque de madeira e verniz: R$ 8.000.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "4.4.003",
+      "grupo": "Estoques",
+      "titulo": "Estoque de Produtos Acabados",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "industria"
+      ],
+      "definicao": "Valor dos produtos fabricados e ainda não vendidos.",
+      "quandoUsar": "Contagem de produtos prontos.",
+      "quandoNaoUsar": "Produtos já vendidos.",
+      "exemplo": "10 mesas prontas na loja: R$ 4.000 de custo.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "4.5.001",
+      "grupo": "Imobilizado",
+      "titulo": "Máquinas e Equipamentos",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Máquinas e equipamentos comprados para operar.",
+      "quandoUsar": "Compra de máquinas de valor relevante.",
+      "quandoNaoUsar": "Conserto e manutenção (são despesa ou custo).",
+      "exemplo": "Compra de uma máquina de R$ 24.000.",
+      "observacao": "A depreciação é lançada à parte."
+    },
+    {
+      "codigo": "4.5.002",
+      "grupo": "Imobilizado",
+      "titulo": "Móveis e Utensílios",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Móveis e utensílios do escritório ou loja.",
+      "quandoUsar": "Compra de mesas, cadeiras e prateleiras.",
+      "quandoNaoUsar": "Material de escritório.",
+      "exemplo": "Compra de 5 cadeiras: R$ 1.500.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "4.5.003",
+      "grupo": "Imobilizado",
+      "titulo": "Computadores e Equipamentos de Informática",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Computadores, impressoras e celulares comprados.",
+      "quandoUsar": "Compra de equipamentos de informática.",
+      "quandoNaoUsar": "Assinaturas de software e suporte.",
+      "exemplo": "Notebook de R$ 4.500.",
+      "observacao": "Itens de valor muito pequeno podem ir direto para despesa; confirme com a Controladoria."
+    },
+    {
+      "codigo": "4.5.004",
+      "grupo": "Imobilizado",
+      "titulo": "Veículos",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Veículos pertencentes à empresa.",
+      "quandoUsar": "Compra de veículos da empresa.",
+      "quandoNaoUsar": "IPVA, combustível e manutenção do veículo.",
+      "exemplo": "Compra de uma van por R$ 85.000.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "4.5.005",
+      "grupo": "Imobilizado",
+      "titulo": "Reformas e Benfeitorias",
+      "categoria": "Ativo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Obras e melhorias em imóvel alugado ou próprio.",
+      "quandoUsar": "Reformas que valorizam o local por vários anos.",
+      "quandoNaoUsar": "Pequenos reparos e pintura simples.",
+      "exemplo": "Reforma da loja: R$ 30.000.",
+      "observacao": "Consulte a Controladoria para decidir o que é investimento."
+    },
+    {
+      "codigo": "5.1.001",
+      "grupo": "Empréstimos e Financiamentos",
+      "titulo": "Empréstimos e Financiamentos",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro emprestado por bancos ou financeiras.",
+      "quandoUsar": "Entrada do empréstimo e pagamento do principal das parcelas.",
+      "quandoNaoUsar": "Juros e IOF (vão em Despesas Financeiras).",
+      "exemplo": "Empréstimo de R$ 10.000 em 12 parcelas.",
+      "observacao": "Receber empréstimo não é receita."
+    },
+    {
+      "codigo": "5.1.002",
+      "grupo": "Empréstimos e Financiamentos",
+      "titulo": "Empréstimos entre Empresas — Recebido",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro que a empresa recebeu emprestado de outra empresa do grupo.",
+      "quandoUsar": "Empresa que recebe: entrada.",
+      "quandoNaoUsar": "Empréstimo concedido (use Empréstimos entre Empresas — Concedido).",
+      "exemplo": "Empresa B recebe R$ 20.000 da empresa A.",
+      "observacao": "Não é receita nem despesa."
+    },
+    {
+      "codigo": "5.1.003",
+      "grupo": "Empréstimos e Financiamentos",
+      "titulo": "Empréstimos de Sócios",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro que o sócio emprestou à empresa.",
+      "quandoUsar": "Sócio empresta dinheiro para a empresa e depois recebe de volta.",
+      "quandoNaoUsar": "Aporte de capital (use Aporte de Capital dos Sócios).",
+      "exemplo": "Sócio empresta R$ 15.000 para pagar fornecedores.",
+      "observacao": "Combine por escrito se é empréstimo ou aporte."
+    },
+    {
+      "codigo": "5.2.001",
+      "grupo": "Obrigações com Terceiros",
+      "titulo": "Fornecedores a Pagar",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Valores devidos a fornecedores por compras já recebidas.",
+      "quandoUsar": "Compra a prazo, antes do pagamento.",
+      "quandoNaoUsar": "Compra paga à vista.",
+      "exemplo": "Compra de R$ 2.000 para pagar em 30 dias.",
+      "observacao": "Ajuda a planejar o caixa dos próximos meses."
+    },
+    {
+      "codigo": "5.2.002",
+      "grupo": "Obrigações com Terceiros",
+      "titulo": "Cartão de Crédito a Pagar",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Fatura do cartão que ainda não foi paga.",
+      "quandoUsar": "Compras no cartão aguardando o pagamento da fatura.",
+      "quandoNaoUsar": "Pagamento da fatura sem lançar as compras.",
+      "exemplo": "Compras de R$ 3.400 na fatura; pagar a fatura apenas quita.",
+      "observacao": "O pagamento da fatura não é uma nova despesa."
+    },
+    {
+      "codigo": "5.2.003",
+      "grupo": "Obrigações com Terceiros",
+      "titulo": "Adiantamentos de Clientes",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro recebido de clientes antes de entregar o produto ou serviço.",
+      "quandoUsar": "Sinal ou pagamento antecipado de cliente.",
+      "quandoNaoUsar": "Venda entregue e paga.",
+      "exemplo": "Cliente paga R$ 2.000 de sinal.",
+      "observacao": "Vira receita quando o serviço ou produto é entregue."
+    },
+    {
+      "codigo": "5.3.001",
+      "grupo": "Obrigações Trabalhistas",
+      "titulo": "Salários a Pagar",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Salários e benefícios já devidos e ainda não pagos.",
+      "quandoUsar": "Folha apurada aguardando pagamento.",
+      "quandoNaoUsar": "Salário já pago.",
+      "exemplo": "Folha de R$ 25.000 para pagar no 5º dia útil.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "5.3.002",
+      "grupo": "Obrigações Trabalhistas",
+      "titulo": "INSS e FGTS a Recolher",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Encargos da folha já apurados e ainda não pagos.",
+      "quandoUsar": "Guias de encargos aguardando pagamento.",
+      "quandoNaoUsar": "Encargos já pagos.",
+      "exemplo": "FGTS e INSS do mês para pagar no mês seguinte.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "5.3.003",
+      "grupo": "Obrigações Trabalhistas",
+      "titulo": "Provisão de Férias e 13º Salário",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Reserva mensal para o pagamento futuro de férias e 13º.",
+      "quandoUsar": "Todo mês, reservando uma parte do valor.",
+      "quandoNaoUsar": "Pagamento efetivo (use Férias e 13º Salário em Pessoal).",
+      "exemplo": "Provisão mensal de R$ 700.",
+      "observacao": "Evita surpresas de caixa."
+    },
+    {
+      "codigo": "5.4.001",
+      "grupo": "Obrigações Fiscais",
+      "titulo": "Impostos a Recolher",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Impostos apurados e ainda não pagos.",
+      "quandoUsar": "Guias de impostos aguardando pagamento.",
+      "quandoNaoUsar": "Impostos já pagos.",
+      "exemplo": "DAS do mês para pagar no dia 20.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "5.4.002",
+      "grupo": "Obrigações Fiscais",
+      "titulo": "Parcelamentos de Impostos",
+      "categoria": "Passivo",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Impostos atrasados que foram parcelados.",
+      "quandoUsar": "Principal do parcelamento.",
+      "quandoNaoUsar": "Juros e multa do parcelamento (despesa financeira).",
+      "exemplo": "Parcelamento de R$ 12.000 em 24 vezes.",
+      "observacao": "—"
+    },
+    {
+      "codigo": "5.5.001",
+      "grupo": "Patrimônio dos Sócios",
+      "titulo": "Distribuição de Lucros",
+      "categoria": "Patrimônio (não é receita nem despesa)",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Parte do lucro entregue aos sócios.",
+      "quandoUsar": "Retirada de lucros além do pró-labore.",
+      "quandoNaoUsar": "Pró-labore (é despesa).",
+      "exemplo": "Sócios retiram R$ 5.000 de lucro.",
+      "observacao": "Não é despesa e não entra na DRE."
+    },
+    {
+      "codigo": "5.5.002",
+      "grupo": "Patrimônio dos Sócios",
+      "titulo": "Aporte de Capital dos Sócios",
+      "categoria": "Patrimônio (não é receita nem despesa)",
+      "cor": "azul",
+      "segmentos": [
+        "comercio",
+        "servicos",
+        "industria"
+      ],
+      "definicao": "Dinheiro que o sócio coloca na empresa sem precisar devolver.",
+      "quandoUsar": "Aumento de capital pelo sócio.",
+      "quandoNaoUsar": "Empréstimo de sócio.",
+      "exemplo": "Sócio coloca R$ 20.000 como capital.",
+      "observacao": "—"
+    }
+  ]
+}
